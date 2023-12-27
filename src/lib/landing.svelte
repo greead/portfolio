@@ -1,7 +1,3 @@
-<script lang="ts">
-  import Navigation from './navigation.svelte';
-</script>
-
 <div class="top-text">
     <div class="howdy">
         Howdy!
@@ -14,18 +10,19 @@
 <div class="name">
     Alekzander Green
 </div>
-<Navigation />
+
 
 <style>
+    
     @font-face {
         font-family: 'NovaCut-Regular';
-        src: url('../assets/PermanentMarker-Regular.ttf');
+        src: url('/PermanentMarker-Regular.ttf');
         
     }
 
     @font-face {
         font-family: 'Lobster';
-        src: url('../assets/Lobster-Regular.ttf');
+        src: url('/Lobster-Regular.ttf');
     }
 
     .name {
@@ -58,8 +55,8 @@
     .top-text {
         display: grid;
         grid-template: 
-            'howdy howdy other'
-            'howdy howdy myName';
+            'howdy other'
+            'howdy myName';
     }
 
 

@@ -1,31 +1,20 @@
 <script>
   import ContactButton from './contact_button.svelte';
+  export let active = 0;
   
 </script>
 
 <div class="nav">
     <ul class="horizontal">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#top">About Me</a></li>
-        <li><a href="#top">Experience</a></li>
-        <li><a href="#top">Portfolio</a></li>
+        <li class={active==0 ? "active" : "inactive"}><a class={active==0 ? "active" : "inactive"} href="/">Home</a></li>
+        <li class={active==1 ? "active" : "inactive"}><a class={active==1 ? "active" : "inactive"} href="/about">About Me</a></li>
+        <li class={active==2 ? "active" : "inactive"}><a class={active==2 ? "active" : "inactive"} href="/experience">Experience</a></li>
+        <li class={active==3 ? "active" : "inactive"}><a class={active==3 ? "active" : "inactive"} href="/portfolio">Portfolio</a></li>
         <li class="contact"><ContactButton /></li>
     </ul>    
 </div>
 
 <style>
-
-    @font-face {
-        font-family: 'NovaCut-Regular';
-        src: url('../assets/PermanentMarker-Regular.ttf');
-        
-    }
-
-    @font-face {
-        font-family: 'Lobster';
-        src: url('../assets/Lobster-Regular.ttf');
-    }
-
     ul.horizontal {
         list-style-type: none;
         margin: 0;
@@ -43,14 +32,27 @@
     li {
         float: left;
         padding: 1em 2em 1em 2em;
+        font-family:Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
+    li.active {
+        background-color: rgba(152, 251, 152);
     }
 
     a {
         color: rgba(152, 251, 152);
+        text-decoration: none;
+    }
+
+    a.active {
+        color:#333;
+        text-decoration: none;
     }
 
     li.contact {
         float: right;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
 </style>

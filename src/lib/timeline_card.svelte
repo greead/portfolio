@@ -14,7 +14,7 @@
 </div>
 <span>{date}</span>
 <div class="content">
-  <img src="src/assets/{img}" alt="Logo"/>
+  <img src="/{img}" alt="Logo"/>
   <p>{body}</p>
   <div class="keywords">
     <Tag {keywords}/>
