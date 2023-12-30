@@ -10,8 +10,12 @@
 
 <style>
     .landing {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
-        max-width: 1280px;
-        padding: 2rem;
+        width: 55%;
+        min-height: 100vh;
+        margin: 0 auto;
     }
 </style>

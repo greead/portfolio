@@ -12,7 +12,7 @@
             date={experience.date}
             title={experience.title}
             body={experience.body}
-            keywords={experience.keywords}
+            keywords={experience.keywords.sort()}
             img={experience.image}
             />
           </li>
@@ -30,7 +30,6 @@
 }
 
 .timeline{
-  width:800px;
   background-color:rgba(245, 255, 250, 0.90);
   color:black;
   padding:30px 20px;

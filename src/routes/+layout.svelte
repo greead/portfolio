@@ -7,16 +7,25 @@
       background-color: mintcream;
       background-image: url('/wavey.png');
       background-repeat: repeat-y;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      min-width: 320px;
-      margin: 0;
+    }
+
+    :global(html) {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @font-face {
+        font-family: 'NovaCut-Regular';
+        src: url('/PermanentMarker-Regular.ttf');
+        
+    }
+
+    @font-face {
+        font-family: 'Lobster';
+        src: url('/Lobster-Regular.ttf');
     }
 
     img {
         width: 50px;
-        
     }
 
     a {

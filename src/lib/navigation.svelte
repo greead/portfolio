@@ -21,18 +21,21 @@
         padding: 0;
         overflow: hidden;
         background-color: #333;
+        margin-bottom: 0;
     }
 
     .nav {
         display: block;
         border: 1px solid green;
         box-shadow:0px 0px 10px rgba(0,0,0,.5);
+        margin-bottom: 10px;
+        min-width: 50vw;
+        justify-content: center;
     }
 
     li {
         float: left;
         padding: 1em 2em 1em 2em;
-        font-family:Arial, Helvetica, sans-serif;
         text-decoration: none;
     }
 
@@ -52,7 +55,6 @@
 
     li.contact {
         float: right;
-        font-family: Arial, Helvetica, sans-serif;
     }
 
 </style>

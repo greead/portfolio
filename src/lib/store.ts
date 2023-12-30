@@ -4,7 +4,7 @@ export let experience_items = [
         title:"CS Master's Program - Purdue Fort Wayne, Department of Computer Science",
         body:"I am currently in my first year of graduate school at Purdue Fort Wayne. It is definitely more difficult than undergrad, but it is also very fun! After completing my Bachelor's degree, I found that I loved research, programming, science, and math. So, I applied to a Master's program that could give me all of that and more! I don't have any regrets so far.",
         image: "pfw.png",
-        keywords:["Public Speaking", "Data Analytics", "Problem Solving", "Data Visualization", "Machine Learning", "Software Engineering", "GitHub", "Python", "Django", "Svelte", "Software Planning", "Design Patterns", "Architecture Patterns", "RESTful APIs", "Organization"],
+        keywords: ["Public Speaking", "Data Analytics", "Problem Solving", "Data Visualization", "Machine Learning", "Software Engineering", "GitHub", "Python", "Django", "Svelte", "Software Planning", "Design Patterns", "Architecture Patterns", "RESTful APIs", "Organization"],
     },
     {
         date:"August 2023 - Present",
@@ -18,14 +18,14 @@ export let experience_items = [
         title:"Teaching Assistant - Purdue Fort Wayne, Department of Computer Science",
         body:"For this teaching assistantship, I am working closely with a professor to help them develop materials for a Data Analytics and Visualization course that they are working on. My professor asked me to help him in this endeavor because he enjoyed the effort I put into my work combined with my general aptitude for data analysis. The truth is that I am excited to learn new things and break it down for others to learn it too!",
         image: "pfw.png",
-        keywords:["Python", "Pandas", "matplotlib", "Organization", "Data Preprocessing", "Data Analysis", "Data Visualization", "Teaching"],
+        keywords:["Python", "Pandas", "Matplotlib", "Organization", "Data Preprocessing", "Data Analysis", "Data Visualization", "Teaching"],
     },
     {
         date:"August 2023 - December 2023",
         title:"TAP Project - SEAVAC(USA), L.L.C. ",
         body:"I worked on a TAP project alongside SEAVAC wherein I cleaned, explored, and did a basic regression analysis on SEAVAC's sales data. This project is being used as an example to launch other TAP projects to give PFW students more opportunities to work with real-life data. Working with SEAVAC was an incredible experience that tested me in many ways which forced me to adapt and grow.",
         image: "seavac.jpg",
-        keywords:["Data Preprocessing", "Data Analysis", "Data Visualization", "Python", "Pandas", "matplotlib", "Sci-Kit Learn", "Machine Learning", "Technical Report Writing", "Documentation"],
+        keywords:["Data Preprocessing", "Data Analysis", "Data Visualization", "Python", "Pandas", "Matplotlib", "Sci-Kit Learn", "Machine Learning", "Technical Report Writing", "Documentation"],
     },
     {
         date:"July 2023",
@@ -53,7 +53,7 @@ export let experience_items = [
         title:"Engineering Co-Op - Nidec Drive Systems",
         body:"I had a co-op with Nidec Drive Systems during the Summer and Fall semesters for two years. While at Nidec, I took on many different projects that spanned many subjects in the worlds of mechanical, electrical, computer, and software engineering. I also learned to work across specialties in a group with other co-ops. This co-op was a great experience and taught me quite a lot.",
         image:"nidec.jpg",
-        keywords:["Teamwork", "Research", "Testing", "Big data", "Data Analysis", "Data Visualization", "C", "Microprocessors", "Circuit Design", "VBA + Excel", "Python", "Pandas", "matplotlib", "Dynomometers", "Engineering", "Problem Solving"],
+        keywords:["Teamwork", "Research", "Testing", "Big data", "Data Analysis", "Data Visualization", "C", "Microprocessors", "Circuit Design", "VBA + Excel", "Python", "Pandas", "Matplotlib", "Dynomometers", "Engineering", "Problem Solving"],
     },
     {
         date:"August 2019 - July 2020",

@@ -1,6 +1,6 @@
 <div class="top-text">
     <div class="howdy">
-        Howdy!
+        Hello there!
     </div>
     
     <div class="my-name">
@@ -14,16 +14,7 @@
 
 <style>
     
-    @font-face {
-        font-family: 'NovaCut-Regular';
-        src: url('/PermanentMarker-Regular.ttf');
-        
-    }
 
-    @font-face {
-        font-family: 'Lobster';
-        src: url('/Lobster-Regular.ttf');
-    }
 
     .name {
         font-family: 'NovaCut-Regular';
