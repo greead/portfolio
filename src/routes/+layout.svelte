@@ -7,7 +7,6 @@
       background-color: mintcream;
       background-image: url('/wavey.png');
       background-repeat: repeat-y;
-      background-size: 100%;
       display: grid;
       place-items: center;
       min-height: 100vh;

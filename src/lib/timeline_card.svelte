@@ -34,20 +34,20 @@
   color:green;
   font-size:17px;
   padding-top:5px;
+  text-align: center;
 }
 .timeline ul li .content p{
   padding:5px 0px 15px 0px;
   font-size:15px;
   text-align: justify;
+  line-height: 150%;
 }
 
 span {
-  display:inline-block;
-  /* background-color:rgba(152, 251, 152);
-  border-radius:25px; */
+  display:block;
   padding:2px 15px;
-  font-size:15px;
-  text-align:center;
+  font-size: 15px;
+  text-align: center;
   text-decoration: underline;
 }
 
