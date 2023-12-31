@@ -30,9 +30,10 @@
 }
 
 .timeline{
-  background-color:rgba(245, 255, 250, 0.90);
+  
   color:black;
   padding:30px 20px;
+  background-color:rgba(245, 255, 250, 0.95);
   border: 1px solid green;
   box-shadow:0px 0px 10px rgba(0,0,0,.5);
 }

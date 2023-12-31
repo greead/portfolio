@@ -2,11 +2,16 @@
     export let keywords = ["JavaScript", "HTML", "CSS"]
 </script>
 
+
 <ul class="tags">
+  <div class="container">
     {#each keywords as keyword}
         <li><span class="tag">{keyword}</span></li>
     {/each}
+  </div>
 </ul>
+
+
 
 <style>
 
@@ -18,9 +23,15 @@
   padding: 0;
 }
 
-.tags li {
-  float: left;
-  
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container::after {
+  content: "";
+  flex: auto;
 }
 
 .tag {

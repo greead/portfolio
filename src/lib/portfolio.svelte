@@ -1,50 +1,23 @@
+<script lang="ts">
+    import {portfolio_items} from './store'
+</script>
+
 <div class="row">
-    <div class="column">
-        <div class="card">
-            <img src="/wavey.png" alt="Avatar">
-            <div class="container">
-                <h4><b>This Portfolio Website</b></h4>
-                <p>This portfolio website was written from scratch using SvelteKit. It uses a Python FastAPI server to retrieve its content.</p>
-                <h5><a href="#top">GitHub Link</a></h5>
+    {#each portfolio_items as portfolio_item}
+        <div class="column">
+            <div class="card">
+                <div class="imgbox">
+                    <img src="/{portfolio_item.image}" alt="Project">
+                </div>
+                <div class="container">
+                    <h4><b>{portfolio_item.title}</b></h4>
+                    <p>{portfolio_item.body}</p>
+                    <h5><a href="{portfolio_item.link}">{portfolio_item.link_text}</a></h5>
+                </div>
             </div>
         </div>
-    </div>    
-    <div class="column">
-        <div class="card">
-            <img src="/wavey.png" alt="Avatar">
-            <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <img src="/wavey.png" alt="Avatar">
-            <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <img src="/wavey.png" alt="Avatar">
-            <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <img src="/wavey.png" alt="Avatar">
-            <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-            </div>
-        </div>
-    </div>
+    {/each}
+    
 </div>
 
 <style>
@@ -60,13 +33,14 @@
     }
 
     img {
-        width: 100%;
+        /* width: 100%; */
         padding: 1em;
+        max-height: 40vh;
+        max-width: 100%;
     }
 
     h4 {
         text-align: center;
-        font-family: 'Lobster';
     }
 
     h5 {
@@ -90,8 +64,9 @@
         clear: both;
     }
     .card {
-        background-color: mintcream;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        background-color:rgba(245, 255, 250, 0.95);
+        border: 1px solid green;
+        box-shadow:0px 0px 10px rgba(0,0,0,.5);
         height: 100%;
     }
     .card:hover {
@@ -101,4 +76,9 @@
     .container {
         padding: 2px 16px;
     }
+
+    .imgbox {
+        text-align: center;
+    }
+
 </style>

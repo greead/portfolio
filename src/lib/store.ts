@@ -65,5 +65,54 @@ export let experience_items = [
 ]
 
 export let portfolio_items = [
-    
+    {
+        title:"This Portfolio Website",
+        body: "This portfolio website was written from scratch using SvelteKit. Everything you see here was done by hand, by me (minus any corporate logos).",
+        link: "#top",
+        link_text: "GitHub Link",
+        image: "website.png"
+    },
+    {
+        title:"ByteBuddy",
+        body: "ByteBuddy is a retro themed chatroom application that was built using Svelte, Django, and Redis. In addition to authentication and basic chatroom capabilities, the application features fully functional and syncronized IDEs so that users can code together!",
+        link: "https://github.com/greead/bytebuddy_chat",
+        link_text: "GitHub Link",
+        image: "bytebuddy.png"
+    },
+    {
+        title:"Smart Medicine Cap and Notification Application",
+        body: "This was my senior design project when finishing my Computer Engineering Technology Bachelor's. The project is composed of two parts: a smart medicine cap with a Bluetooth Low Energy (BLE) enabled microprocessor and an Android app that connects to the cap. This project was intended to help people who often forget whether or not they've taken their medicine by logging when they open/close their medicine, sending emergency alerts, and more.",
+        link: "https://github.com/greead/smart_medicine_cap",
+        link_text: "GitHub Link",
+        image: "medicine_cap.png"
+    },
+    {
+        title:"Research into the Need for Undergraduate Research at Commuter Campuses",
+        body: "This research project investigated if and why commuter campuses should include resources and ways for undergraduate students to participate in research for the benefit of the students, faculty, and campus. This project helped to jump-start and get funding for a web portal project intended to connect students with faculty for research purposes.",
+        link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2300/rec/65",
+        link_text: "Poster Link",
+        image: "undergrad_research_poster.png"
+    },
+    {
+        title:"Research into the Impact of Different Displays on Human Emotions",
+        body: "This research project used VR alongside other modern displays to test the emotional response of participants. This research was done to see if devices like VR headsets could produce enhanced emotional responses, which could make for a useful tool in many applications. The results were inconclusive.",
+        link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2299/rec/63",
+        link_text: "Poster Link",
+        image: "vr_poster.png"
+    },
+    {
+        title:"Steps Tracker Game",
+        body: "This app was developed to encourage walking and fitness by tracking steps and allowing users to spend their steps on upgrades for a clicker game, allowing users to gain 'clicks' by walking instead.",
+        link: "",
+        link_text: "",
+        image: "steps_app.jpg"
+    },
+    {
+        title:"LED Prototyping Box",
+        body: "This a prototyping box that used an embedded microprocessor to measure the accuracy of manufactured electrical motor sensors. It displays the info to an LED screen and was essential for starting the manufacturing process.",
+        link: "",
+        link_text: "",
+        image: "LED_box.png"
+    },
+
 ]

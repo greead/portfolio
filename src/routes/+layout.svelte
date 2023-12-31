@@ -11,6 +11,7 @@
 
     :global(html) {
         font-family: Arial, Helvetica, sans-serif;
+        line-height: 150%;
     }
 
     @font-face {

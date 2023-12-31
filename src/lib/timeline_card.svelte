@@ -13,7 +13,7 @@
     <h3>{title}</h3>
 </div>
 <span>{date}</span>
-<div class="content">
+<div class="content bottom">
   <img src="/{img}" alt="Logo"/>
   <p>{body}</p>
   <div class="keywords">
@@ -29,8 +29,9 @@
   perspective:800px;
 }
 
+
+
 .timeline ul li .content h3{
-  color:green;
   font-size:17px;
   padding-top:5px;
   text-align: center;
@@ -61,10 +62,24 @@ span {
 
 
 img {
+  grid-area: 1 / 4 / 1 / 4;
   height: 7em;
-  float: right;
+  /* float: right; */
   border: 2px solid green;
   margin: 0px 0px 0px 8px;
+}
+
+.keywords {
+  margin-top: 8px;
+  grid-area: 3 / 1 / 3 / 4;
+}
+
+p {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.bottom {
+  display: grid;
 }
 
 </style>
