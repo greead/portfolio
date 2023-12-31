@@ -45,11 +45,11 @@
         </h2>
         <div class="cats">
             <figure>
-                <img src="/cat.jpg" alt="Whispers">
+                <img src="/whispers.png" alt="Whispers">
                 <figcaption>Whispers</figcaption>
             </figure>
             <figure>
-                <img src="/cat.jpg" alt="Persian">
+                <img src="/persian.png" alt="Persian">
                 <figcaption>Persian</figcaption>
             </figure>
         </div>    
@@ -72,9 +72,9 @@
     }
 
     img {
-        width: 40%;
         margin: auto;
         border: 1px solid green;
+        height: 80%;
     }
 
     .image {

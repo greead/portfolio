@@ -1,6 +1,6 @@
-<button>Contact Me</button>
+<!-- <button>Contact Me</button> -->
 
-<style>
+<!-- <style>
 
     button {
         color: rgba(152, 251, 152);
@@ -12,5 +12,5 @@
     }
 
 
-</style>
+</style> -->
 
