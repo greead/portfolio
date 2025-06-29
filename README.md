@@ -1,38 +1,20 @@
-# create-svelte
+## Portfolio project
+Alekzander Green
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+### Summary
+As part of my job and internship searches, I have found that many companies want to see a project portfolio. I found this to be a perfect opportunity to express my web coding skills by putting together a portfolio that is meant to be hosted on GitHub pages or any other hosting platform. I could, alternatively, host this portfolio locally using an Apache webserver or via other hosting services. However, I chose to use GitHub pages as it is free and serves my purposes.
 
-## Creating a project
+#### Relevant technologies
+- JavaScript
+- HTML / CSS
+- SvelteKit
+- Svelte
+- GitHub Pages
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+#### Relevant skills
+- JavaScript programming
+- HTML and CSS development
+- Front-end development
+- Static pages
+- SvelteKit and Svelete frameworks
+- Svelte routing, templating, stores, and reactivity
