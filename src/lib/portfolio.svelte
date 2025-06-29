@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {base} from '$app/paths'
     import {portfolio_items} from './store'
 </script>
 
@@ -7,7 +8,7 @@
         <div class="column">
             <div class="card">
                 <div class="imgbox">
-                    <img src="/{portfolio_item.image}" alt="Project">
+                    <img src="{base}/{portfolio_item.image}" alt="Project">
                 </div>
                 <div class="container">
                     <h4><b>{portfolio_item.title}</b></h4>
@@ -35,7 +36,7 @@
     img {
         /* width: 100%; */
         padding: 1em;
-        max-height: 40vh;
+        max-height: 30vh;
         max-width: 100%;
     }
 

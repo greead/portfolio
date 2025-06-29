@@ -1,4 +1,5 @@
 <script lang="ts">
+  import {base} from '$app/paths'
   import Tag from "./tag.svelte";
 
   export let date = "2020"
@@ -14,11 +15,11 @@
 </div>
 <span>{date}</span>
 <div class="content bottom">
-  <img src="/{img}" alt="Logo"/>
+  <img src="{base}/{img}" alt="Logo"/>
   <p>{body}</p>
-  <div class="keywords">
+  <!-- <div class="keywords">
     <Tag {keywords}/>
-  </div> 
+  </div>  -->
 </div>
 
 <style>

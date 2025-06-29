@@ -1,9 +1,9 @@
 <script lang="ts">
-    
+    import {base} from '$app/paths'
     
 </script>
 
-<a href="/"><img src='/logo.png' alt="Logo"/></a>
+<a href="{base}/"><img src='{base}/logo.png' alt="Logo"/></a>
 
 <slot />
 

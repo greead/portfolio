@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {base} from '$app/paths'
     const birthdate = new Date("9/12/1999");
     const today = new Date();
     const years = today.getFullYear() - birthdate.getFullYear();
@@ -8,55 +9,49 @@
 </script>
 
 <div class="content">
-    <div class="image">
-        <img src="/placeholder.jpg" alt="me lol">
-    </div>
+    <!-- <div class="image">
+        <img src="{base}/me.jpg" alt="me lol">
+    </div> -->
     <div class="text">
         <h1>Alekz Green</h1>
         <h2>
-            Me, Professionally
+            Professionally
         </h2>
         <p>
-            Hello, I'm Alekzander Green. I'm a {yearsOld} year old graduate student at Purdue University Fort Wayne (PFW) studying computer science. 
-            I graduated from PFW with a Bachelor's in Computer Engineering Technology with a minor in math and CS on the side. 
-            I am very active at the school where I currently teach an introductory programming class, work on extracurricular research, and work with other professors to improve teaching materials.
-            I've worked since I was 15 in the food industry, and eventually worked to become a shift manager at a Pizza Hut in my city.
-            Since then I've been working in academia or with different companies in the area.
-            I am a good programmer and problem solver who likes to learn new things and tackle interesting problems.
-            I have experience with C, C#, Python, Java, Kotlin, and JavaScript; this includes their applications with things like embedded programming, Unity, machine learning, data analysis, Android programming, GUI & CLI applications, web servers, and web clients.
+            Hello, I'm Alekzander Green. I'm a {yearsOld} year old aspiring software engineer with a passion for programming. I recently graduated from Purdue University with an M.S. in Computer Science.
+            I previously graduated from Purdue with a B.S. in Computer Engineering Technology, an A.S. in Electrical Engineering Technology, and a couple minors in CS and Math.
+            I currently work at Purdue University, Fort Wayne as a lecturer teaching introductory programming in Python.
         </p>
+        <p>
+            I am an experienced programmer and problem solver with a penchant for intellectual curiosity.
+            I strongly believe that having varied experiences and knowledge will lead to deeper understanding and incredible moments of unlikely inspiration. 
+        </p>
+        <p>
+            I have experience in a wide variety of topics such as game programming, data analysis, web servers, web clients, databases, application programming, machine learning, embedded programming, and much more.
+            My repetoire of programming languages includes C/C++, C#, Python, Java, Kotlin, PHP, and JavaScript.
+            I've worked with several specific frameworks and technologies like Unreal Engine 5, Unity, Godot, Pandas, Matplotlib, NumPy, Django, SvelteKit, FastAPI, Svelte, React, PostgreSQL, SQLite, MongoDB, .NET Core, Android Studio, Sci-Kit Learn, and TensorFlow.
+        </p>
+            
         <h2>
-            Me, Personally
+            Personally
         </h2>
         <p>
-            Hi, I'm Alekz! I have a million-and-one interests about anything and everything (I truly like to learn).
-            The things I enjoy doing the most are reading, trying new foods or restaurants, drinking tea, and playing games!
-            If I had to give my top 5 games, they would be: League of Legends, World of Warcraft, anything Pokemon, Magic the Gathering, and the Pathfinder RPG.
-            When I play Pathfinder, I usually am the Game Master because I love worldbuilding and lore.
-            I sometimes even read lore for games I don't play because I'm a sucker for the interesting tidbits that someone put effort into crafting.
-            My favorite teas are rooibos, jasmine, and chai; my favorite anime right now is Jujutsu Kaisen; my favorite color is green (shocking right?); and my favorite quote is,
+            Hey there, I'm Alekz! I have a million-and-one interests and I truly enjoy learning. My biggest hobbies are playing games, reading, trying new restaurants, and drinking tea.
+        </p>
+        <p>            
+            Some of my favorite games are League of Legends, World of Warcraft, Pokemon, Magic: the Gathering, and the Pathfinder RPG.
+            I am a big fan of worldbuilding and lore, sometimes reading lore for games and settings that I don't play or otherwise read.
+            In my spare time, when not playing games, eating, or reading, I like to work on making games in Unreal, with my current project being a dynamic MMORPG.
+        </p>
+        <p>
+            My favorite teas are rooibos, jasmine, and masala chai; my favorite color is green; and my favorite quote is,
         </p>
         <div class="quote">
             <div><q>Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.</q></div>
             <div>— Dr. Seuss, The Lorax</div>
-        </div>
-        <h2>
-            My Cats
-        </h2>
-        <div class="cats">
-            <figure>
-                <img src="/whispers.png" alt="Whispers">
-                <figcaption>Whispers</figcaption>
-            </figure>
-            <figure>
-                <img src="/persian.png" alt="Persian">
-                <figcaption>Persian</figcaption>
-            </figure>
-        </div>    
+        </div>  
     </div>
 </div>
-
-
 
 <style>
     h1 {
@@ -74,7 +69,8 @@
     img {
         margin: auto;
         border: 1px solid green;
-        height: 80%;
+        max-height: 40dvh;
+        max-width: 100%;
     }
 
     .image {
