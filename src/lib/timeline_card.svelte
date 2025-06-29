@@ -6,7 +6,7 @@
   export let title = "Title"
   export let body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
   export let img = "pfw.png"
-  export let keywords = ["JavaScript", "HTML", "CSS"]
+//   export let keywords = ["JavaScript", "HTML", "CSS"]
 </script>
 
 
