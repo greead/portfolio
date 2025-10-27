@@ -4,7 +4,9 @@
 
 </script>
 
+
 <div class="timeline">
+    <h1>Experience</h1>
     <ul>
         {#each experience_items as experience}
           <li>
@@ -12,7 +14,6 @@
             date={experience.date}
             title={experience.title}
             body={experience.body}
-            keywords={experience.keywords.sort()}
             img={experience.image}
             />
           </li>
@@ -29,8 +30,13 @@
   perspective:800px;
 }
 
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
 .timeline{
-  
+  margin-top: 20px;
   color:black;
   padding:30px 20px;
   background-color:rgba(245, 255, 250, 0.95);

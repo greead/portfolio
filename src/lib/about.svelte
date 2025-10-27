@@ -1,5 +1,6 @@
 <script lang="ts">
     import {base} from '$app/paths'
+    import Timeline from './timeline.svelte';
     const birthdate = new Date("9/12/1999");
     const today = new Date();
     const years = today.getFullYear() - birthdate.getFullYear();
@@ -52,6 +53,8 @@
         </div>  
     </div>
 </div>
+
+<Timeline></Timeline>
 
 <style>
     h1 {

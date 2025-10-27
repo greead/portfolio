@@ -9,7 +9,7 @@
     <ul class="horizontal">
         <li class={active==0 ? "active" : "inactive"}><a class={active==0 ? "active" : "inactive"} href="{base}/">Home</a></li>
         <li class={active==1 ? "active" : "inactive"}><a class={active==1 ? "active" : "inactive"} href="{base}/about">About Me</a></li>
-        <li class={active==2 ? "active" : "inactive"}><a class={active==2 ? "active" : "inactive"} href="{base}/experience">Experience</a></li>
+        <!-- <li class={active==2 ? "active" : "inactive"}><a class={active==2 ? "active" : "inactive"} href="{base}/experience">Experience</a></li> -->
         <li class={active==3 ? "active" : "inactive"}><a class={active==3 ? "active" : "inactive"} href="{base}/portfolio">Portfolio</a></li>
         <li class="contact"><ContactButton /></li>
     </ul>    

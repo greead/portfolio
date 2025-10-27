@@ -1,13 +1,4 @@
 <div class="landing">
-    <div class="top-text">
-        <div class="howdy">
-            Hello there!
-        </div>
-        
-        <div class="my-name">
-            my name is...
-        </div>
-    </div>
     <div class="name">
         Alekzander Green
     </div>
