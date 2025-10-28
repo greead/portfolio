@@ -1,62 +1,71 @@
 <script>
-    import {base} from '$app/paths';
-  import ContactButton from './contact_button.svelte';
-  export let active = 0;
-  
+    // import ContactButton from "./contact_button.svelte";
+    /** @type {{active?: number}} */
+    let { active = 0 } = $props();
 </script>
 
-<div class="nav">
-    <ul class="horizontal">
-        <li class={active==0 ? "active" : "inactive"}><a class={active==0 ? "active" : "inactive"} href="{base}/">Home</a></li>
-        <li class={active==1 ? "active" : "inactive"}><a class={active==1 ? "active" : "inactive"} href="{base}/about">About Me</a></li>
-        <!-- <li class={active==2 ? "active" : "inactive"}><a class={active==2 ? "active" : "inactive"} href="{base}/experience">Experience</a></li> -->
-        <li class={active==3 ? "active" : "inactive"}><a class={active==3 ? "active" : "inactive"} href="{base}/portfolio">Portfolio</a></li>
-        <li class="contact"><ContactButton /></li>
-    </ul>    
-</div>
+<ul id="nav">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
+        <img src="/InBug-White.png" alt="LinkedIn Link" />
+    </a>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/greead">
+        <img src="/github-mark-white.svg" alt="GitHub Link" />
+    </a>
+    <a target="_blank" rel="noopener noreferrer" href="mailto:alekz.green08@gmail.com">
+        <img src="/mail-white.png" alt="Email Link" />
+    </a>
+</ul>
 
 <style>
-    ul.horizontal {
+    ul {
+        /* Alignment */
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        top: 20px;
+        position: sticky;
+        min-width: 76vw;
+
+        /* Style */
+        border: 1px solid green;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+        /* Remove default list attributes */
         list-style-type: none;
         margin: 0;
         padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        margin-bottom: 0;
-    }
-
-    .nav {
-        display: block;
-        border: 1px solid green;
-        box-shadow:0px 0px 10px rgba(0,0,0,.5);
-        margin-bottom: 10px;
-        min-width: 50vw;
-        justify-content: center;
+        background-color: var(--color_secondary);
     }
 
     li {
-        float: left;
-        padding: 1em 2em 1em 2em;
+        padding: 1vh 2vw;
+        text-align: center;
+        font-size: 1em;
         text-decoration: none;
     }
 
-    li.active {
-        background-color: rgba(152, 251, 152);
+    img {
+        display: block;
+        height: 3vh;
+        padding-right: 1vw;
     }
+
+    /* 
+    li.active {
+        background-color: var(--color_primary);
+    } */
 
     a {
-        color: rgba(152, 251, 152);
+        color: var(--color_primary);
         text-decoration: none;
     }
 
-    a.active {
-        color:#333;
+    /* a.active {
+        color: var(--color_secondary);
         text-decoration: none;
-    }
-
-    li.contact {
-        float: right;
-    }
-
+    } */
 </style>
-
