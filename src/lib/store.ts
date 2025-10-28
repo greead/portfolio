@@ -19,8 +19,8 @@ export let main_shader = {
     #define S smoothstep
 
     vec4 Line(vec2 uv, float speed, float height, vec3 col) {
-        uv.y += S(1.0, 0.0, abs(uv.x)) * sin(uTime * speed - uv.x * height) * 0.2 - 0.2;
-        return vec4(S(0.06 * S(0.2, 0.9, abs(uv.x)), 0.0, abs(uv.y) - 0.004) * col, 1.0);
+        uv.y += S(1.0, 0.0, abs(uv.x * 0.8)) * sin(uTime * speed - uv.x * height) * 0.3 - 0.15;
+        return vec4(S(0.005 * S(0.1, 1.0, abs(uv.x)), 0.0, abs(uv.y) - 0.005) * col, 1.0);
     }
 
     void main() {
