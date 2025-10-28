@@ -1,85 +1,76 @@
 <script lang="ts">
-    import {base} from '$app/paths'
-    import {portfolio_items} from './store'
+    import { portfolio_items } from "./store";
 </script>
 
-<div class="row">
-    {#each portfolio_items as portfolio_item}
-        <div class="column">
+<span style="position: relative; top: -4rem;" id="portfolio"></span>
+<main>
+    <h1>Portfolio</h1>
+    <section>
+        {#each portfolio_items as portfolio_item}
             <div class="card">
-                <div class="imgbox">
-                    <img src="{base}/{portfolio_item.image}" alt="Project">
-                </div>
-                <div class="container">
-                    <h4><b>{portfolio_item.title}</b></h4>
-                    <p>{portfolio_item.body}</p>
-                    <h5><a href="{portfolio_item.link}">{portfolio_item.link_text}</a></h5>
-                </div>
+                <img src="/{portfolio_item.image}" alt="Project" />
+                <h4><b>{portfolio_item.title}</b></h4>
+                <p>{portfolio_item.body}</p>
+                <a href={portfolio_item.link}>{portfolio_item.link_text}</a>
             </div>
-        </div>
-    {/each}
-    
-</div>
+        {/each}
+    </section>
+</main>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
-
-    .column {
-        float: left;
-        width: 30%;
-        padding: 0 5px;
-        margin-bottom: 10px;
-    }
-
     img {
-        /* width: 100%; */
-        padding: 1em;
         max-height: 30vh;
-        max-width: 100%;
+        width: 100%;
+        max-width: fit-content;
+        border: 1px solid green;
     }
 
-    h4 {
+    h1 {
         text-align: center;
-    }
-
-    h5 {
-        text-align: center;
+        background-color: rgba(245, 255, 250, 0.95);
+        border: 1px solid green;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        width: calc(100% - 2px);
+        padding: 1vh 0;
+        /* top: 10vh;
+        position: sticky; */
     }
 
     p {
         text-align: justify;
     }
 
-    .row {
+    main {
+        width: 76vw;
+    }
+
+    section {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 -10px;
-    }
-
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    .card {
-        background-color:rgba(245, 255, 250, 0.95);
-        border: 1px solid green;
-        box-shadow:0px 0px 10px rgba(0,0,0,.5);
-        height: 100%;
-    }
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-
-    .container {
-        padding: 2px 16px;
-    }
-
-    .imgbox {
+        flex-flow: row wrap;
+        justify-content: space-between;
         text-align: center;
     }
 
+    .card {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        background-color: rgba(245, 255, 250, 0.95);
+        border: 1px solid green;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* width: calc(50% - 2px - 4rem); */
+        width: 46%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 1200px) {
+        .card {
+            width: 100%;
+        }
+    }
+
+    /* .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    } */
 </style>

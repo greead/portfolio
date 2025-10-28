@@ -1,21 +1,24 @@
 <script lang="ts">
-    import Landing from "$lib/landing.svelte";
+    import About from "$lib/about.svelte";
+    import BgCanvas from "$lib/bg_canvas.svelte";
     import Navigation from "$lib/navigation.svelte";
+    import Portfolio from "$lib/portfolio.svelte";
+    import TopMatter from "$lib/top_matter.svelte";
 </script>
 
-<div class="landing">
-    <Landing/>
-    <Navigation active={0}/>
-</div>
+<BgCanvas />
+<main>
+    <TopMatter />
+    <Navigation active={0} />
+    <Portfolio />
+    <About />
+</main>
 
 <style>
-    .landing {
+    main {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        width: 55%;
-        min-height: 100vh;
-        margin: 0 auto;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
     }
 </style>
