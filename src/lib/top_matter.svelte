@@ -1,4 +1,6 @@
 <script>
+    // TODO
+    // @ts-ignore
     import Portrait from "./portrait.svelte";
 </script>
 
