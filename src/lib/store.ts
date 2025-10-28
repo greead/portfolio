@@ -2,6 +2,7 @@ export let main_shader = {
     vert: 
     `#version 300 es
     in vec2 aPosition;
+    
     void main(void) {
         gl_Position = vec4(aPosition, 0.0, 1.0);
     }
@@ -17,22 +18,19 @@ export let main_shader = {
 
     #define S smoothstep
 
-    vec4 Line(vec2 uv, float speed, float height, vec3 col, float thickness) {
-        uv.y += S(0.0, 1.0, abs(uv.x)) * sin(uTime * speed - uv.x * height) * 0.5;
-        return vec4(S(0.1 * abs(uv.x), 0.0, abs(uv.y) - thickness) / col, 1.0) ;
-        // return vec4(S(0.06 * S(0.2, 0.9, abs(uv.x)), 0.0, abs(uv.y) - thickness) / col, 1.0) ;
+    vec4 Line(vec2 uv, float speed, float height, vec3 col) {
+        uv.y += S(1.0, 0.0, abs(uv.x)) * sin(uTime * speed - uv.x * height) * 0.2 - 0.2;
+        return vec4(S(0.06 * S(0.2, 0.9, abs(uv.x)), 0.0, abs(uv.y) - 0.004) * col, 1.0);
     }
 
     void main() {
         vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-        vec4 O = vec4(1.0);
-        float pixelScale = uResolution.y;
-        float thickness = 0.5 / pixelScale;
+        vec4 O = vec4(0.96, 1, 0.98, 1);
 
         for (float i = 0.0; i <= 5.0; i += 1.0) {
-            float t = i / 15.0;
-            vec4 line = Line(uv, 1.0 + t, 8.0, vec3(0.55 + t * 0.7, 0.95 + t * 0.5, 0.55), thickness);
-            O.rgb -= line.rgb;
+            float t = i / 10.0;
+            vec4 line = Line(uv, 1.0 + t, 8.0, vec3(0.55 + t * 0.7, 0.95 + t * 0.5, 0.55));
+            O.rgb = mix(O.rgb, line.rgb, line.b);
         }
 
         fragColor = O;
