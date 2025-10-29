@@ -6,7 +6,7 @@
     let { children }: Props = $props();
 </script>
 
-<a href="/"><img src="/logo.png" alt="Logo" /></a>
+<a href="/"><img src="/logo.svg" alt="Logo" /></a>
 
 {@render children?.()}
 
@@ -15,11 +15,22 @@
         font-family: Arial, Helvetica, sans-serif;
         line-height: 150%;
         scroll-behavior: smooth;
-        --color_primary: rgba(152, 251, 152, 0.9);
+        --color_primary: rgba(152, 251, 152, 1);
         --color_secondary: #333;
         --color_bg: mintcream;
-        --secondary_color_grn: green;
-        
+        --color_font_primary: #333;
+        --color_font_secondary: green;
+        color: var(--color_font_primary);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :global(html) {
+            --color_primary: mintcream;
+            --color_secondary: #333;
+            --color_bg: #333;
+            --color_font_primary: mintcream;
+            --color_font_secondary: rgba(152, 251, 152, 1);
+        }    
     }
 
     :global(body) {

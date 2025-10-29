@@ -1,12 +1,14 @@
 <script lang="ts">
     import { main_shader } from "./store";
 
+    const prefersDarkScheme = $state(window.matchMedia("(prefers-color-scheme: dark)").matches);
     const vsSource = main_shader.vert;
     const fsSource = main_shader.frag;
     let canvas: HTMLCanvasElement;
     let gl: WebGL2RenderingContext | null;
     let uTimeLoc: WebGLUniformLocation | null;
     let uResolutionLoc: WebGLUniformLocation | null;
+    let uBgColorLoc: WebGLUniformLocation | null;
 
     $effect(() => {
         gl = canvas.getContext("webgl2");
@@ -31,13 +33,14 @@
         gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
         uTimeLoc = gl.getUniformLocation(program, "uTime");
         uResolutionLoc = gl.getUniformLocation(program, "uResolution");
+        uBgColorLoc = gl.getUniformLocation(program, "uBgColor");
 
         function render(time: GLfloat) {
             time *= 0.001; // convert to seconds
 
             resizeCanvasToDisplaySize(gl.canvas);
             gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-            gl.clearColor(0.96, 1, 0.98, 1);
+            gl.clearColor(0.96, 1.0, 0.98, 1);
             gl.clear(gl.COLOR_BUFFER_BIT);
 
             gl.useProgram(program);
@@ -46,6 +49,13 @@
             // Pass uniforms
             gl.uniform1f(uTimeLoc, time);
             gl.uniform2f(uResolutionLoc, canvas.width, canvas.height);
+            gl.uniform3f(uBgColorLoc, 0.13, 0.13, 0.13);
+            if (prefersDarkScheme) {
+                gl.uniform3f(uBgColorLoc, 0.13, 0.13, 0.13);
+            } else {
+                gl.uniform3f(uBgColorLoc, 0.96, 1.0, 0.98);
+            }
+            
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
@@ -132,7 +142,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        /* background-color: aqua; */
+        background-color: var(--color_bg);
         z-index: -1;
     }
 </style>

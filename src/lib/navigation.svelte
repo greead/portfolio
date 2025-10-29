@@ -29,6 +29,8 @@
         top: 20px;
         position: sticky;
         min-width: 76vw;
+        z-index: 1;
+        opacity: 0.95;
 
         /* Style */
         border: 1px solid green;
