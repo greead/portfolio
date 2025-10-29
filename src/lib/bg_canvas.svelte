@@ -1,7 +1,6 @@
 <script lang="ts">
     import { main_shader } from "./store";
 
-    const prefersDarkScheme = $state(window.matchMedia("(prefers-color-scheme: dark)").matches);
     const vsSource = main_shader.vert;
     const fsSource = main_shader.frag;
     let canvas: HTMLCanvasElement;
@@ -33,7 +32,6 @@
         gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
         uTimeLoc = gl.getUniformLocation(program, "uTime");
         uResolutionLoc = gl.getUniformLocation(program, "uResolution");
-        uBgColorLoc = gl.getUniformLocation(program, "uBgColor");
 
         function render(time: GLfloat) {
             time *= 0.001; // convert to seconds
@@ -48,14 +46,7 @@
 
             // Pass uniforms
             gl.uniform1f(uTimeLoc, time);
-            gl.uniform2f(uResolutionLoc, canvas.width, canvas.height);
-            gl.uniform3f(uBgColorLoc, 0.13, 0.13, 0.13);
-            if (prefersDarkScheme) {
-                gl.uniform3f(uBgColorLoc, 0.13, 0.13, 0.13);
-            } else {
-                gl.uniform3f(uBgColorLoc, 0.96, 1.0, 0.98);
-            }
-            
+            gl.uniform2f(uResolutionLoc, canvas.width, canvas.height);            
 
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 

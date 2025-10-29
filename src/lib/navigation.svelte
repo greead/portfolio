@@ -5,7 +5,7 @@
 </script>
 
 <ul id="nav">
-    <li><a href="#top">Home</a></li>
+    <li><a href="#top">Top</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#about">About</a></li>
     <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
@@ -26,7 +26,7 @@
         flex-flow: row nowrap;
         justify-content: flex-start;
         align-items: center;
-        top: 20px;
+        top: 1vh;
         position: sticky;
         min-width: 76vw;
         z-index: 1;
