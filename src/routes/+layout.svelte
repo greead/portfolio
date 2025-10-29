@@ -16,23 +16,23 @@
         font-family: Arial, Helvetica, sans-serif;
         line-height: 150%;
         scroll-behavior: smooth;
-        --color_primary: rgba(152, 251, 152);
+        --color_primary: mintcream;
         --color_secondary: #333;
-        --color_bg: mintcream;
-        --color_font_primary: #333;
-        --color_font_secondary: green;
-        --color_font_visited: rgb(160, 72, 0);
+        --color_bg: #333;
+        --color_font_primary: mintcream;
+        --color_font_secondary: rgba(152, 251, 152, 1);
+        --color_font_visited: rgb(255, 200, 154);
         color: var(--color_font_primary);        
     }
 
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: light) {
         :global(html) {
-            --color_primary: mintcream;
+            --color_primary: rgba(152, 251, 152);
             --color_secondary: #333;
-            --color_bg: #333;
-            --color_font_primary: mintcream;
-            --color_font_secondary: rgba(152, 251, 152, 1);
-            --color_font_visited: rgb(255, 200, 154);
+            --color_bg: mintcream;
+            --color_font_primary: #333;
+            --color_font_secondary: green;
+            --color_font_visited: rgb(160, 72, 0);
         }    
     }
 
