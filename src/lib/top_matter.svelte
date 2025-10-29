@@ -24,13 +24,13 @@
         font-weight: bolder;
         text-align: center;
         text-wrap: nowrap;
-        margin-bottom: 1.5vh;
+        margin-bottom: 10px;
     }
     h2 {
         font-family: "NovaCut-Regular";
-        font-size: 2vw;
+        font-size: 3vw;
         text-align: center;
         text-wrap: nowrap;
-        margin-bottom: 1.5vh;
+        margin-bottom: 40px;
     }
 </style>

@@ -19,6 +19,13 @@
         }
 
         const program = createProgram(gl, vsSource, fsSource);
+
+        if (!program) {
+            alert(
+                "Unable to create shader program. Aborting."
+            );
+            return;
+        }
         const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
         const vao = gl.createVertexArray();
         gl.bindVertexArray(vao);
@@ -36,19 +43,21 @@
         function render(time: GLfloat) {
             time *= 0.001; // convert to seconds
 
+            // @ts-ignore
             resizeCanvasToDisplaySize(gl.canvas);
-            gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-            gl.clearColor(0.96, 1.0, 0.98, 1);
-            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl?.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+            gl?.clearColor(0.96, 1.0, 0.98, 1);
+            gl?.clear(gl.COLOR_BUFFER_BIT);
 
-            gl.useProgram(program);
-            gl.bindVertexArray(vao);
+            // @ts-ignore
+            gl?.useProgram(program);
+            gl?.bindVertexArray(vao);
 
             // Pass uniforms
-            gl.uniform1f(uTimeLoc, time);
-            gl.uniform2f(uResolutionLoc, canvas.width, canvas.height);            
+            gl?.uniform1f(uTimeLoc, time);
+            gl?.uniform2f(uResolutionLoc, canvas.width, canvas.height);            
 
-            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            gl?.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
             requestAnimationFrame(render);
         }
