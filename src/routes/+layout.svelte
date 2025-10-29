@@ -4,9 +4,10 @@
     }
 
     let { children }: Props = $props();
+
 </script>
 
-<a href="/"><img src="/logo.png" alt="Logo" /></a>
+<a href="/"><img src="/logo.svg" alt="Logo" /></a>
 
 {@render children?.()}
 
@@ -15,11 +16,24 @@
         font-family: Arial, Helvetica, sans-serif;
         line-height: 150%;
         scroll-behavior: smooth;
-        --color_primary: rgba(152, 251, 152, 0.9);
+        --color_primary: mintcream;
         --color_secondary: #333;
-        --color_bg: mintcream;
-        --secondary_color_grn: green;
-        
+        --color_bg: #333;
+        --color_font_primary: mintcream;
+        --color_font_secondary: rgba(152, 251, 152, 1);
+        --color_font_visited: rgb(255, 200, 154);
+        color: var(--color_font_primary);        
+    }
+
+    @media (prefers-color-scheme: light) {
+        :global(html) {
+            --color_primary: rgba(152, 251, 152);
+            --color_secondary: #333;
+            --color_bg: mintcream;
+            --color_font_primary: #333;
+            --color_font_secondary: green;
+            --color_font_visited: rgb(160, 72, 0);
+        }    
     }
 
     :global(body) {
@@ -30,6 +44,14 @@
 
     :global(h1) {
         font-family: "NovaCut-Regular";
+    }
+
+    :global(a:link) {
+        color: var(--color_font_secondary);
+    }
+
+    :global(a:visited) {
+        color: var(--color_font_visited);
     }
 
     /* :global(div) {
@@ -49,12 +71,13 @@
     }
 
     img {
-        width: 50px;
+        height: 100%;
     }
 
     a {
         position: fixed;
-        left: 20px;
-        top: 20px;
+        left: 1vw;
+        top: 1vh;
+        height: 8vmin;
     }
 </style>

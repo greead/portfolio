@@ -27,8 +27,9 @@
 
     h1 {
         text-align: center;
-        background-color: rgba(245, 255, 250, 0.95);
+        background-color: var(--color_bg);
         border: 1px solid green;
+        opacity: 0.95;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         width: calc(100% - 2px);
         padding: 1vh 0;
@@ -55,7 +56,8 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        background-color: rgba(245, 255, 250, 0.95);
+        background-color: var(--color_bg);
+        opacity: 0.95;
         border: 1px solid green;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         /* width: calc(50% - 2px - 4rem); */

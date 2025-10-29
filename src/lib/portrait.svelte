@@ -1,5 +1,5 @@
 <script>
-    let { image = "/pl.svg", orient = "horizontal", offset = 6 } = $props();
+    let { image = "/whispers.png", orient = "horizontal", offset = 6 } = $props();
     let isHorz = orient == "horizontal";
     let top_offset = isHorz ? "0px" : `-${offset}vw`;
     let left_offset = isHorz ? `-${offset}vw` : "0px";

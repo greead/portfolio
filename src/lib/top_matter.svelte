@@ -6,7 +6,7 @@
 
 <section id="top">
     <Portrait image={"me.jpg"} orient={"vertical"} offset={0} />
-    <h1>Alekzander <span style="color: green">Green</span></h1>
+    <h1>Alekzander <span style="color: var(--color_font_secondary)">Green</span></h1>
     <h2>Aspiring Software Engineer</h2>
 </section>
 
@@ -24,13 +24,13 @@
         font-weight: bolder;
         text-align: center;
         text-wrap: nowrap;
-        margin-bottom: 1.5vh;
+        margin-bottom: 10px;
     }
     h2 {
         font-family: "NovaCut-Regular";
-        font-size: 2vw;
+        font-size: 3vw;
         text-align: center;
         text-wrap: nowrap;
-        margin-bottom: 1.5vh;
+        margin-bottom: 40px;
     }
 </style>
