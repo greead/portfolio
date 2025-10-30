@@ -1,17 +1,17 @@
 <script>
-    // TODO
-    // @ts-ignore
     import Portrait from "./portrait.svelte";
+    let { sfx = $bindable()} = $props();
+
 </script>
 
 <section class="switches">
     <label class="switch">
-        <input type="checkbox" checked />
+        <input type="checkbox" bind:checked={sfx}/>
         <span class="toggle"></span>
         <img src="/sfx_blk.svg" alt="SFX toggle" />
     </label>
     <label class="switch">
-        <input type="checkbox" checked />
+        <input type="checkbox"/>
         <span class="toggle"></span>
         <img src="/dark_mode.svg" alt="DarkMode toggle" />
     </label>
