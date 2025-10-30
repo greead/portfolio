@@ -75,9 +75,12 @@
     }
 
     a {
-        position: fixed;
+        position: absolute;
         left: 1vw;
         top: 1vh;
         height: 8vmin;
+        background-color: var(--color_primary);
+        padding: 5px;
+        border-radius: 25%;
     }
 </style>

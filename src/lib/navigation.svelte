@@ -5,7 +5,7 @@
 </script>
 
 <ul id="nav">
-    <li><a href="#top">Top</a></li>
+    <li><a href="#top">Home</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#about">About</a></li>
     <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
