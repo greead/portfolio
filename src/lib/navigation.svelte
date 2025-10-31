@@ -1,21 +1,20 @@
 <script>
     // import ContactButton from "./contact_button.svelte";
-    /** @type {{active?: number}} */
     let { active = 0 } = $props();
 </script>
 
 <ul id="nav">
-    <li><a href="#top">Top</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#top" class="text-icon"><img class="small" src="/home_icon.svg" alt="Icon" />Home</a></li>
+    <li><a href="#portfolio" class="text-icon"><img class="small" src="/portfolio_icon.svg" alt="Icon" />Portfolio</a></li>
+    <li><a href="#about" class="text-icon"><img class="small" src="/about_icon.svg" alt="Icon" style="" />About</a></li>
     <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
-        <img src="/InBug-White.png" alt="LinkedIn Link" />
+        <img class="padded-icon" src="/InBug-White.png" alt="LinkedIn Link" />
     </a>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/greead">
-        <img src="/github-mark-white.svg" alt="GitHub Link" />
+        <img class="padded-icon" src="/github-mark-white.svg" alt="GitHub Link" />
     </a>
     <a target="_blank" rel="noopener noreferrer" href="mailto:alekz.green08@gmail.com">
-        <img src="/mail-white.png" alt="Email Link" />
+        <img class="padded-icon" src="/mail-white.png" alt="Email Link" />
     </a>
 </ul>
 
@@ -44,26 +43,30 @@
     }
 
     li {
-        padding: 1vh 2vw;
+        padding: 1vh 1vw;
         text-align: center;
         font-size: 1em;
         text-decoration: none;
     }
 
-    img {
-        display: block;
-        height: 3vh;
-        padding-right: 1vw;
-    }
-
-    /* 
-    li.active {
-        background-color: var(--color_primary);
-    } */
-
     a {
         color: var(--color_primary);
         text-decoration: none;
+    }
+
+    .text-icon {
+        display: inline;
+    }
+
+    .small {
+        height: 1em;
+        padding-right: 5px;
+    }
+
+    .padded-icon {
+        display: block;
+        padding-right: 10px;
+        height: 1.5em;
     }
 
     /* a.active {

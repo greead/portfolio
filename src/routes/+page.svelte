@@ -4,11 +4,16 @@
     import Navigation from "$lib/navigation.svelte";
     import Portfolio from "$lib/portfolio.svelte";
     import TopMatter from "$lib/top_matter.svelte";
+
+    let sfx_toggle = $state(true);
+
 </script>
 
-<BgCanvas />
+{#if sfx_toggle}
+    <BgCanvas />
+{/if}
 <main>
-    <TopMatter />
+    <TopMatter bind:sfx={sfx_toggle}/>
     <Navigation active={0} />
     <Portfolio />
     <About />

@@ -22,18 +22,16 @@
         --color_font_primary: mintcream;
         --color_font_secondary: rgba(152, 251, 152, 1);
         --color_font_visited: rgb(255, 200, 154);
-        color: var(--color_font_primary);        
+        color: var(--color_font_primary);
     }
 
-    @media (prefers-color-scheme: light) {
-        :global(html) {
-            --color_primary: rgba(152, 251, 152);
-            --color_secondary: #333;
-            --color_bg: mintcream;
-            --color_font_primary: #333;
-            --color_font_secondary: green;
-            --color_font_visited: rgb(160, 72, 0);
-        }    
+    :global(html.light) {
+        --color_primary: rgba(152, 251, 152);
+        --color_secondary: #333;
+        --color_bg: mintcream;
+        --color_font_primary: #333;
+        --color_font_secondary: green;
+        --color_font_visited: rgb(160, 72, 0);
     }
 
     :global(body) {
@@ -75,9 +73,12 @@
     }
 
     a {
-        position: fixed;
-        left: 1vw;
-        top: 1vh;
-        height: 8vmin;
+        position: absolute;
+        height: 48px;
+        padding-left: 30px;
+        padding-top: 30px;
+        background-color: mintcream;
+        padding: 5px;
+        border-radius: 25%;
     }
 </style>
