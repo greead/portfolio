@@ -33,8 +33,8 @@
 
         .switch {
             position: relative;
-            width: 8vmin;
-            height: 8vmin;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background-color: var(--color_primary);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);

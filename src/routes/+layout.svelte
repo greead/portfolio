@@ -76,10 +76,10 @@
 
     a {
         position: absolute;
-        left: 1vw;
-        top: 1vh;
-        height: 8vmin;
-        background-color: var(--color_primary);
+        height: 48px;
+        padding-left: 30px;
+        padding-top: 30px;
+        background-color: mintcream;
         padding: 5px;
         border-radius: 25%;
     }
