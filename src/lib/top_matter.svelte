@@ -1,19 +1,44 @@
 <script>
+    import { onMount } from "svelte";
     import Portrait from "./portrait.svelte";
-    let { sfx = $bindable()} = $props();
+    import { browser } from "$app/environment";
+    let { sfx = $bindable(), darkmode = $bindable() } = $props();
 
+    let dark_mode = $state(true);
+
+    export function toggleTheme() {
+        dark_mode = !dark_mode;
+        if (browser) {
+            localStorage.setItem("theme", dark_mode ? "dark" : "light");
+            document.documentElement.classList.toggle("light", !dark_mode);
+        }
+    }
+
+    onMount(() => {
+        if (browser) {
+            const saved_theme = localStorage.getItem("theme");
+            if (saved_theme) {
+                dark_mode = saved_theme == "dark";
+            } else {
+                dark_mode = window.matchMedia(
+                    "(prefers-color-theme: dark)",
+                ).matches;
+            }
+            document.documentElement.classList.toggle("light", !dark_mode);
+        }
+    });
 </script>
 
 <section class="switches">
     <label class="switch">
-        <input type="checkbox" bind:checked={sfx}/>
+        <input type="checkbox" bind:checked={sfx} />
         <span class="toggle"></span>
         <img src="/sfx_blk.svg" alt="SFX toggle" />
     </label>
     <label class="switch">
-        <input type="checkbox"/>
+        <input type="checkbox" bind:checked={dark_mode} onclick={toggleTheme} />
         <span class="toggle"></span>
-        <img src="/dark_mode.svg" alt="DarkMode toggle" />
+        <img src="/dark_mode.svg" alt="Dark Mode toggle" />
     </label>
 </section>
 <section class="top-matter">

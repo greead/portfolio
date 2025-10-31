@@ -4,6 +4,7 @@
     import Navigation from "$lib/navigation.svelte";
     import Portfolio from "$lib/portfolio.svelte";
     import TopMatter from "$lib/top_matter.svelte";
+
     let sfx_toggle = $state(true);
 
 </script>

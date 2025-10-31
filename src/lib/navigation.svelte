@@ -1,6 +1,5 @@
 <script>
     // import ContactButton from "./contact_button.svelte";
-    /** @type {{active?: number}} */
     let { active = 0 } = $props();
 </script>
 
