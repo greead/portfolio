@@ -8,7 +8,11 @@
     <section>
         {#each portfolio_items as portfolio_item}
             <div class="card">
-                <img src="/{portfolio_item.image}" alt="Project" />
+                <figure>
+                    <img class="portfolio-img" src="/{portfolio_item.image}" alt="Project" />
+                    <figcaption><img class="tooling-icon" src="/tooling_icon.svg" alt="icon"/>TEST</figcaption>
+                </figure>
+                
                 <h4><b>{portfolio_item.title}</b></h4>
                 <p>{portfolio_item.body}</p>
                 <a href={portfolio_item.link}>{portfolio_item.link_text}</a>
@@ -18,11 +22,30 @@
 </main>
 
 <style>
-    img {
+    .portfolio-img {
         max-height: 30vh;
         width: 100%;
         max-width: fit-content;
+    }
+
+    .tooling-icon {
+        height: 1em;
+        padding-right: 5px;
+    }
+
+    figure {
+        display: flex;
+        flex-flow: column nowrap;
         border: 1px solid green;
+    }
+
+    figcaption {
+        background-color: #333;
+        opacity: 95%;
+        color: mintcream;
+        padding: 3px 5px;
+        text-align: left;
+
     }
 
     h1 {

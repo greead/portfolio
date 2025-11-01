@@ -121,60 +121,68 @@ export let experience_items = [
 
 export let portfolio_items = [
     {
-        title: "Untitled Unreal MMO",
+        title: "Untitled Unreal Project",
         body: "My current project is on building a prototype fantasy MMORPG using Unreal Engine 5. I am taking this project as an opportunity to dive deep into all aspects of game development, such as landscaping, foliage, materials, meshes, animations, scripting, online play, sound design, AI, and more. I am using both C/C++ and Blueprints.",
         link: "#",
         link_text: "",
-        image: "unrealmmo.png"
+        image: "unrealmmo.png",
+        tools: ["UE5", "Unreal BPs", "Blender", "C++"]
     },
     {
         title: "Master's Thesis",
         body: "My thesis is an analysis of how LLMs are used in introductory programming education and strategies for developing AI-resistant assessments using ideas developed in my lectures.",
         link: "https://doi.org/10.25394/PGS.29189570.v1",
         link_text: "DOI Link",
-        image: "thesis.png"
+        image: "thesis.png",
+        tools: ["Research", "LaTeX"]
     },
     {
         title: "Byte_Learn",
         body: "Byte_Learn is a short-form video webapp focused on educational content. The application was built using Laravel, Angular, PostgreSQL, Docker, and AWS.",
         link: "https://github.com/greead/ByteLearn",
         link_text: "GitHub Link",
-        image: "bytelearn.png"
+        image: "bytelearn.png",
+        tools: ["Laravel", "Docker", "AWS", "PHP"]
     },
     {
         title: "Developer's ToolBox",
         body: "The Developer's ToolBox is a website with several resources that I have personally found useful when programming and learning. The website is built with Express.js, Sass, SQLite, and React.",
         link: "https://github.com/greead/devtoolbox_cs537",
         link_text: "GitHub Link",
-        image: "devtoolbox.png"
+        image: "devtoolbox.png",
+        tools: ["Express.js", "Sass", "React", "Mocha+Chai", "Cypress", "JavaScript", "HTML", "CSS"]
     },
     {
         title: "Data Analysis and Visualization",
         body: "I have contributed to several data analysis and visualization projects as part of schoolwork and industry work. My datasets and notebooks are located at Kaggle.",
         link: "https://www.kaggle.com/alekzandergreen",
         link_text: "Kaggle Link",
-        image: "kaggle.png"
+        image: "kaggle.png",
+        tools: ["Jupyter", "Pandas", "Matplotlib", "Scikit-learn", "Python"]
     },
     {
         title: "Object-Relational MMORPG Database",
         body: "This was a conceptual project with the goal of developing an MMORPG database that explores and embraces the full object-relational capabilities of PostgreSQL. The database is fully functional and complete along with a simple protoype client.",
         link: "https://github.com/greead/mmo_database_acs575/",
         link_text: "GitHub Link",
-        image: "mmodatabase.png"
+        image: "mmodatabase.png",
+        tools: ["PostgreSQL", "C#"]
     },
     {
         title: "This Portfolio Website",
         body: "This portfolio website was written from scratch using SvelteKit. Everything you see here was done by hand, by me (minus any corporate logos).",
         link: "https://github.com/greead/portfolio",
         link_text: "GitHub Link",
-        image: "website.png"
+        image: "website.png",
+        tools: ["Svelte", "SvelteKit", "WebGL2", "GLSL", "JavaScript", "HTML", "CSS"]
     },
     {
         title: "ByteBuddy",
         body: "ByteBuddy is a retro themed chatroom application that was built using Svelte, Django, and Redis. In addition to authentication and basic chatroom capabilities, the application features fully functional and syncronized IDEs so that users can code together!",
         link: "https://github.com/greead/bytebuddy_chat",
         link_text: "GitHub Link",
-        image: "bytebuddy.png"
+        image: "bytebuddy.png",
+        tools: ["Svelte", "Django", "DjangoRestFramework", "Python", "JavaScript"]
     },
     // {
     //     title: "Smart Medicine Cap and Notification Application",
@@ -188,14 +196,16 @@ export let portfolio_items = [
         body: "This research project investigated if and why commuter campuses should include resources and ways for undergraduate students to participate in research for the benefit of the students, faculty, and campus. This project helped to jump-start and get funding for a web portal project intended to connect students with faculty for research purposes.",
         link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2300/rec/65",
         link_text: "Poster Link",
-        image: "undergrad_research_poster.png"
+        image: "undergrad_research_poster.png",
+        tools: ["Research"]
     },
     {
         title: "Research into the Impact of Different Displays on Human Emotions",
         body: "This research project used VR alongside other modern displays to test the emotional response of participants. This research was done to see if devices like VR headsets could produce enhanced emotional responses, which could make for a useful tool in many applications. The results were inconclusive.",
         link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2299/rec/63",
         link_text: "Poster Link",
-        image: "vr_poster.png"
+        image: "vr_poster.png",
+        tools: ["Researh", "Unity 3D", "VR", "C#"]
     },
     // {
     //     title: "Steps Tracker Game",
