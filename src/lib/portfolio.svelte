@@ -40,9 +40,8 @@
                             {portfolio_item.tools.join(", ")}
                         </figcaption>
                     </figure>
-
-                    <h4><b>{portfolio_item.title}</b></h4>
-                    <p>{portfolio_item.body}</p>
+                    <h4 class="title"><b>{portfolio_item.title}</b></h4>
+                    {portfolio_item.body}
                     <a href={portfolio_item.link}>{portfolio_item.link_text}</a>
                 </div>
             {/if}
@@ -66,14 +65,21 @@
         display: flex;
         flex-flow: column wrap;
         border: 1px solid green;
+        margin: 0;
+        width: 100%;
+        align-items: center;
     }
 
     figcaption {
         background-color: #333;
         opacity: 95%;
+        /* white-space: nowrap; */
         color: mintcream;
         padding: 3px 5px;
         text-align: left;
+        align-self: flex-start;
+        max-width: initial;
+
     }
 
     h1 {
@@ -86,8 +92,10 @@
         padding: 1vh 0;
     }
 
-    p {
-        text-align: justify;
+    .title {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 10px;
     }
 
     main {
@@ -113,6 +121,7 @@
         width: 46%;
         padding: 1rem;
         margin-bottom: 1rem;
+        text-align: justify;
     }
 
     @media (max-width: 1200px) {
