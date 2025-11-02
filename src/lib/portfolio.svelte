@@ -1,25 +1,51 @@
 <script lang="ts">
     import { portfolio_items } from "./store";
+    let selectedRadio = "All";
 </script>
 
 <span style="position: relative; top: -4rem;" id="portfolio"></span>
 <main>
     <h1>Portfolio</h1>
-    <section>
+    <section class="portfolio-filter">
+        {#each ["All", "Data Analytics", "Graphics & Tech Art", "Game Dev", "Research", "Full-stack", "Backend", "Frontend", "Databases", "Testing"].sort() as btn}
+            <label for={btn}  class="filter-btn">
+                <input
+                    type="radio"
+                    id={btn}
+                    name="portfolio-filter"
+                    bind:group={selectedRadio}
+                    value={btn}
+                />
+                <span class="filter-toggle"></span>
+                <span class="filter-text">{btn}</span>
+            </label>
+        {/each}
+    </section>
+    <section class="portfolio-card">
         {#each portfolio_items as portfolio_item}
-            <div class="card">
-                <figure>
-                    <img class="portfolio-img" src="/{portfolio_item.image}" alt="Project" />
-                    <figcaption>
-                        <img class="tooling-icon" src="/tooling_icon.svg" alt="icon"/>
-                        {portfolio_item.tools.join(", ")}
-                    </figcaption>
-                </figure>
-                
-                <h4><b>{portfolio_item.title}</b></h4>
-                <p>{portfolio_item.body}</p>
-                <a href={portfolio_item.link}>{portfolio_item.link_text}</a>
-            </div>
+            {#if selectedRadio == "All" || portfolio_item.tags.includes(selectedRadio)}
+                <div class="card">
+                    <figure>
+                        <img
+                            class="portfolio-img"
+                            src="/{portfolio_item.image}"
+                            alt="Project"
+                        />
+                        <figcaption>
+                            <img
+                                class="tooling-icon"
+                                src="/tooling_icon.svg"
+                                alt="icon"
+                            />
+                            {portfolio_item.tools.join(", ")}
+                        </figcaption>
+                    </figure>
+
+                    <h4><b>{portfolio_item.title}</b></h4>
+                    <p>{portfolio_item.body}</p>
+                    <a href={portfolio_item.link}>{portfolio_item.link_text}</a>
+                </div>
+            {/if}
         {/each}
     </section>
 </main>
@@ -48,7 +74,6 @@
         color: mintcream;
         padding: 3px 5px;
         text-align: left;
-
     }
 
     h1 {
@@ -59,8 +84,6 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         width: calc(100% - 2px);
         padding: 1vh 0;
-        /* top: 10vh;
-        position: sticky; */
     }
 
     p {
@@ -71,7 +94,7 @@
         width: 76vw;
     }
 
-    section {
+    .portfolio-card {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -95,6 +118,51 @@
     @media (max-width: 1200px) {
         .card {
             width: 100%;
+        }
+    }
+
+    .portfolio-filter {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .filter-btn {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            padding: 0vh 1vw;
+            border-radius: 5%;
+            margin-bottom: 1vh;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--color_font_secondary);
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .filter-toggle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color_secondary);
+            z-index: -1;
+        }
+
+        input:checked + .filter-toggle {
+            background-color: var(--color_font_secondary);
+        }
+
+        input:checked ~ .filter-text {
+            color: var(--color_bg);
         }
     }
 
