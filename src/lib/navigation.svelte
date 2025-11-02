@@ -1,12 +1,32 @@
 <script>
+    import { onMount } from "svelte";
+
     // import ContactButton from "./contact_button.svelte";
     let { active = 0 } = $props();
+    let width = $state(0);
+    let showtext = $derived(width > 800)
 </script>
+<svelte:window bind:innerWidth={width} />
 
 <ul id="nav">
-    <li><a href="#top" class="text-icon"><img class="small" src="/home_icon.svg" alt="Icon" />Home</a></li>
-    <li><a href="#portfolio" class="text-icon"><img class="small" src="/portfolio_icon.svg" alt="Icon" />Portfolio</a></li>
-    <li><a href="#about" class="text-icon"><img class="small" src="/about_icon.svg" alt="Icon" style="" />About</a></li>
+    <li>
+        <a href="#top" class="text-icon">
+            <img class="small" src="/home_icon.svg" alt="Icon" />
+            {#if showtext}Home{/if}            
+        </a>
+    </li>
+    <li>
+        <a href="#portfolio" class="text-icon">
+            <img class="small" src="/portfolio_icon.svg" alt="Icon" />
+            {#if showtext}Portfolio{/if}
+        </a>
+    </li>
+    <li>
+        <a href="#about" class="text-icon">
+            <img class="small" src="/about_icon.svg" alt="Icon" style="" />
+            {#if showtext}About{/if}
+        </a>
+    </li>
     <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
         <img class="padded-icon" src="/InBug-White.png" alt="LinkedIn Link" />
     </a>
