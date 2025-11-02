@@ -1,10 +1,10 @@
 <script lang="ts">
-    let {image, title, body, link, link_text, tools } = $props();
+    let { image, title, body, link, link_text, tools } = $props();
 </script>
 
 <div class="card">
     <figure>
-        <img class="portfolio-img" src="/{image}"  alt="Project" />
+        <img class="portfolio-img" src="/{image}" alt="Project" />
         <figcaption>
             <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
             {tools.join(", ")}
@@ -16,64 +16,6 @@
 </div>
 
 <style>
-    .portfolio-img {
-        max-height: 30vh;
-        width: 100%;
-        max-width: fit-content;
-    }
-
-    .tooling-icon {
-        height: 1em;
-        padding-right: 5px;
-    }
-
-    figure {
-        display: flex;
-        flex-flow: column wrap;
-        border: 1px solid green;
-        margin: 0;
-        width: 100%;
-        align-items: center;
-    }
-
-    figcaption {
-        background-color: #333;
-        opacity: 95%;
-        /* white-space: nowrap; */
-        color: mintcream;
-        padding: 3px 5px;
-        text-align: left;
-        align-self: flex-start;
-        max-width: initial;
-    }
-
-    h1 {
-        text-align: center;
-        background-color: var(--color_bg);
-        border: 1px solid green;
-        opacity: 0.95;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        width: calc(100% - 2px);
-        padding: 1vh 0;
-    }
-
-    .title {
-        text-align: center;
-        padding: 0;
-        margin-bottom: 10px;
-    }
-
-    main {
-        width: 76vw;
-    }
-
-    .portfolio-card {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        text-align: center;
-    }
-
     .card {
         display: flex;
         flex-flow: column nowrap;
@@ -95,49 +37,41 @@
         }
     }
 
-    .portfolio-filter {
+    figure {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
+        flex-flow: column wrap;
+        border: 1px solid green;
+        margin: 0;
+        width: 100%;
+        align-items: center;
+    }
 
-        input {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    .portfolio-img {
+        max-height: 30vh;
+        width: 100%;
+        max-width: fit-content;
+    }
 
-        .filter-btn {
-            position: relative;
-            width: fit-content;
-            height: fit-content;
-            padding: 0vh 1vw;
-            border-radius: 5%;
-            margin-bottom: 1vh;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            border: 3px solid var(--color_font_secondary);
-            background-color: transparent;
-            cursor: pointer;
-        }
+    figcaption {
+        background-color: #333;
+        opacity: 95%;
+        /* white-space: nowrap; */
+        color: mintcream;
+        padding: 3px 5px;
+        text-align: left;
+        align-self: flex-start;
+        max-width: initial;
+    }
 
-        .filter-toggle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            cursor: pointer;
-            width: 100%;
-            height: 100%;
-            background-color: var(--color_secondary);
-            z-index: -1;
-        }
+    .tooling-icon {
+        height: 1em;
+        padding-right: 5px;
+    }
 
-        input:checked + .filter-toggle {
-            background-color: var(--color_font_secondary);
-        }
-
-        input:checked ~ .filter-text {
-            color: var(--color_bg);
-        }
+    .title {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 10px;
     }
 
     /* .card:hover {
