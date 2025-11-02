@@ -10,7 +10,10 @@
             <div class="card">
                 <figure>
                     <img class="portfolio-img" src="/{portfolio_item.image}" alt="Project" />
-                    <figcaption><img class="tooling-icon" src="/tooling_icon.svg" alt="icon"/>TEST</figcaption>
+                    <figcaption>
+                        <img class="tooling-icon" src="/tooling_icon.svg" alt="icon"/>
+                        {portfolio_item.tools.join(", ")}
+                    </figcaption>
                 </figure>
                 
                 <h4><b>{portfolio_item.title}</b></h4>
@@ -35,7 +38,7 @@
 
     figure {
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: column wrap;
         border: 1px solid green;
     }
 
