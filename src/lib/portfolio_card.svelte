@@ -1,31 +1,19 @@
 <script lang="ts">
-  import PortfolioCard from './portfolio_card.svelte';
-import portfolio_card from './portfolio_card.svelte';
-
-    import { portfolio_items } from "./store";
-    let selectedRadio = $state("All");
+    let {image, title, body, link, link_text, tools } = $props();
 </script>
 
-<span style="position: relative; top: -4rem;" id="portfolio"></span>
-<main>
-    <h1>Portfolio</h1>
-    <section class="portfolio-filter">
-        {#each ["All", "Data Analytics", "Graphics & Tech Art", "Game Dev", "Research", "Full-stack", "Backend", "Frontend", "Databases", "Testing"].sort() as btn}
-            <label for={btn}  class="filter-btn">
-                <input type="radio" id={btn} name="portfolio-filter" bind:group={selectedRadio} value={btn} />
-                <span class="filter-toggle"></span>
-                <span class="filter-text">{btn}</span>
-            </label>
-        {/each}
-    </section>
-    <section class="portfolio-card">
-        {#each portfolio_items as portfolio_item}
-            {#if selectedRadio == "All" || portfolio_item.tags.includes(selectedRadio)}
-                <PortfolioCard {...portfolio_item}/>
-            {/if}
-        {/each}
-    </section>
-</main>
+<div class="card">
+    <figure>
+        <img class="portfolio-img" src="/{image}"  alt="Project" />
+        <figcaption>
+            <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
+            {tools.join(", ")}
+        </figcaption>
+    </figure>
+    <h4 class="title"><b>{title}</b></h4>
+    {body}
+    <a href={link}>{link_text}</a>
+</div>
 
 <style>
     .portfolio-img {
@@ -57,7 +45,6 @@ import portfolio_card from './portfolio_card.svelte';
         text-align: left;
         align-self: flex-start;
         max-width: initial;
-
     }
 
     h1 {
