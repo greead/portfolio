@@ -1,19 +1,21 @@
 <script lang="ts">
     import About from "$lib/about.svelte";
     import BgCanvas from "$lib/bg_canvas.svelte";
+    import Modal from "$lib/modal.svelte";
     import Navigation from "$lib/navigation.svelte";
     import Portfolio from "$lib/portfolio.svelte";
     import TopMatter from "$lib/top_matter.svelte";
 
     let sfx_toggle = $state(true);
-
 </script>
+
+<!-- <Modal /> -->
 
 {#if sfx_toggle}
     <BgCanvas />
 {/if}
 <main>
-    <TopMatter bind:sfx={sfx_toggle}/>
+    <TopMatter bind:sfx={sfx_toggle} />
     <Navigation active={0} />
     <Portfolio />
     <About />
