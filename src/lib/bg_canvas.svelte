@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { main_shader } from "./store";
+    import { browser } from "$app/environment";
 
     const vsSource = main_shader.vert;
     const fsSource = main_shader.frag;
@@ -11,11 +12,22 @@
 
     onMount(() => {
         gl = canvas.getContext("webgl2");
+        // gl = null;
         if (!gl) {
             console.log(
                 "Unable to initialize WebGL. Your browser may not support it.",
             );
+            if (browser) {
+                localStorage.setItem("sfx", "disabled");
+            }
             return;
+        } else {
+            if (browser) {
+                const saved_sfx = localStorage.getItem("sfx");
+                if (saved_sfx == "disabled") {
+                    localStorage.setItem("sfx", "off");
+                }
+            }
         }
 
         const program = createProgram(gl, vsSource, fsSource);

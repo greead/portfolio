@@ -5,6 +5,7 @@
     let { sfx = $bindable() } = $props();
 
     let dark_mode = $state(true);
+    let show_sfx_toggle = $state(true);
 
     export function toggleTheme() {
         if (browser) {
@@ -26,7 +27,7 @@
                 dark_mode = saved_theme == "dark";
             } else {
                 dark_mode = window.matchMedia(
-                    "(prefers-color-scheme: dark)"
+                    "(prefers-color-scheme: dark)",
                 ).matches;
                 console.log(dark_mode);
             }
@@ -35,22 +36,24 @@
             const saved_sfx = localStorage.getItem("sfx");
             if (saved_sfx && saved_sfx == "disabled") {
                 sfx = false;
+                show_sfx_toggle = false;
             } else if (saved_sfx) {
                 sfx = saved_sfx == "on";
             } else {
                 sfx = true;
             }
-
         }
     });
 </script>
 
 <section class="switches">
-    <label class="switch">
-        <input type="checkbox" bind:checked={sfx} onclick={toggleSFX}/>
-        <span class="toggle"></span>
-        <img src="/sfx_blk.svg" alt="SFX toggle" />
-    </label>
+    {#if show_sfx_toggle}
+        <label class="switch" id="sfx-toggle">
+            <input type="checkbox" bind:checked={sfx} onclick={toggleSFX} />
+            <span class="toggle"></span>
+            <img src="/sfx_blk.svg" alt="SFX toggle" />
+        </label>
+    {/if}
     <label class="switch">
         <input type="checkbox" bind:checked={dark_mode} onclick={toggleTheme} />
         <span class="toggle"></span>
