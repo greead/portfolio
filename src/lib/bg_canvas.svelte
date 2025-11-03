@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import { main_shader } from "./store";
 
     const vsSource = main_shader.vert;
@@ -7,12 +8,11 @@
     let gl: WebGL2RenderingContext | null;
     let uTimeLoc: WebGLUniformLocation | null;
     let uResolutionLoc: WebGLUniformLocation | null;
-    let uBgColorLoc: WebGLUniformLocation | null;
 
-    $effect(() => {
+    onMount(() => {
         gl = canvas.getContext("webgl2");
         if (!gl) {
-            alert(
+            console.log(
                 "Unable to initialize WebGL. Your browser may not support it.",
             );
             return;

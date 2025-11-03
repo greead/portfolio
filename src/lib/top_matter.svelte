@@ -2,15 +2,20 @@
     import { onMount } from "svelte";
     import Portrait from "./portrait.svelte";
     import { browser } from "$app/environment";
-    let { sfx = $bindable(), darkmode = $bindable() } = $props();
+    let { sfx = $bindable() } = $props();
 
     let dark_mode = $state(true);
 
     export function toggleTheme() {
-        dark_mode = !dark_mode;
         if (browser) {
-            localStorage.setItem("theme", dark_mode ? "dark" : "light");
-            document.documentElement.classList.toggle("light", !dark_mode);
+            localStorage.setItem("theme", !dark_mode ? "dark" : "light");
+            document.documentElement.classList.toggle("light", dark_mode);
+        }
+    }
+
+    export function toggleSFX() {
+        if (browser) {
+            localStorage.setItem("sfx", !sfx ? "on" : "off");
         }
     }
 
@@ -21,17 +26,28 @@
                 dark_mode = saved_theme == "dark";
             } else {
                 dark_mode = window.matchMedia(
-                    "(prefers-color-theme: dark)",
+                    "(prefers-color-scheme: dark)"
                 ).matches;
+                console.log(dark_mode);
             }
             document.documentElement.classList.toggle("light", !dark_mode);
+
+            const saved_sfx = localStorage.getItem("sfx");
+            if (saved_sfx && saved_sfx == "disabled") {
+                sfx = false;
+            } else if (saved_sfx) {
+                sfx = saved_sfx == "on";
+            } else {
+                sfx = true;
+            }
+
         }
     });
 </script>
 
 <section class="switches">
     <label class="switch">
-        <input type="checkbox" bind:checked={sfx} />
+        <input type="checkbox" bind:checked={sfx} onclick={toggleSFX}/>
         <span class="toggle"></span>
         <img src="/sfx_blk.svg" alt="SFX toggle" />
     </label>
