@@ -47,7 +47,8 @@
     .portfolio-card {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         text-align: center;
     }
+
 </style>

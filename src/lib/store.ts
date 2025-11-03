@@ -214,22 +214,8 @@ export let portfolio_items = [
         link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2299/rec/63",
         link_text: "Poster Link",
         image: "vr_poster.png",
-        tools: ["Researh", "Unity 3D", "VR", "C#"],
+        tools: ["Research", "Unity 3D", "VR", "C#"],
         tags: ["Research"]
     },
-    // {
-    //     title: "Steps Tracker Game",
-    //     body: "This app was developed to encourage walking and fitness by tracking steps and allowing users to spend their steps on upgrades for a clicker game, allowing users to gain 'clicks' by walking instead.",
-    //     link: "",
-    //     link_text: "",
-    //     image: "steps_app.jpg"
-    // },
-    // {
-    //     title: "LED Prototyping Box",
-    //     body: "This a prototyping box that used an embedded microprocessor to measure the accuracy of manufactured electrical motor sensors. It displays the info to an LED screen and was essential for starting the manufacturing process.",
-    //     link: "",
-    //     link_text: "",
-    //     image: "LED_box.png"
-    // },
 
 ]

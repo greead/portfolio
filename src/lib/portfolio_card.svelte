@@ -24,7 +24,6 @@
         opacity: 0.95;
         border: 1px solid green;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        /* width: calc(50% - 2px - 4rem); */
         width: 46%;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -55,7 +54,6 @@
     figcaption {
         background-color: #333;
         opacity: 95%;
-        /* white-space: nowrap; */
         color: mintcream;
         padding: 3px 5px;
         text-align: left;
@@ -74,7 +72,7 @@
         margin-bottom: 10px;
     }
 
-    /* .card:hover {
+    .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    } */
+    }
 </style>

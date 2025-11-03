@@ -36,7 +36,8 @@
         cursor: pointer;
         width: 100%;
         height: 100%;
-        background-color: var(--color_secondary);
+        background-color: var(--color_bg);
+        color: var(--color_font_primary);
         z-index: -1;
     }
 
