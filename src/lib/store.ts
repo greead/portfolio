@@ -126,7 +126,8 @@ export let portfolio_items = [
         link: "#",
         link_text: "",
         image: "unrealmmo.png",
-        tools: ["UE5", "Unreal BPs", "Blender", "C++"]
+        tools: ["UE5", "Unreal BPs", "Blender", "C++"],
+        tags: ["Game Dev", "Graphics & Tech Art"]
     },
     {
         title: "Master's Thesis",
@@ -134,7 +135,8 @@ export let portfolio_items = [
         link: "https://doi.org/10.25394/PGS.29189570.v1",
         link_text: "DOI Link",
         image: "thesis.png",
-        tools: ["Research", "LaTeX"]
+        tools: ["Research", "LaTeX"],
+        tags: ["Research"]
     },
     {
         title: "Byte_Learn",
@@ -142,7 +144,8 @@ export let portfolio_items = [
         link: "https://github.com/greead/ByteLearn",
         link_text: "GitHub Link",
         image: "bytelearn.png",
-        tools: ["Laravel", "Docker", "AWS", "PHP"]
+        tools: ["Laravel", "Docker", "AWS S3", "PHP"],
+        tags: ["Backend", "Databases", "Testing"]
     },
     {
         title: "Developer's ToolBox",
@@ -150,7 +153,8 @@ export let portfolio_items = [
         link: "https://github.com/greead/devtoolbox_cs537",
         link_text: "GitHub Link",
         image: "devtoolbox.png",
-        tools: ["Express.js", "Sass", "React", "Mocha+Chai", "Cypress", "JavaScript", "HTML", "CSS"]
+        tools: ["Express.js", "Sass", "React", "Mocha+Chai", "Cypress", "JavaScript", "HTML", "CSS"],
+        tags: ["Full-stack", "Frontend", "Backend", "Databases", "Testing"]
     },
     {
         title: "Data Analysis and Visualization",
@@ -158,7 +162,8 @@ export let portfolio_items = [
         link: "https://www.kaggle.com/alekzandergreen",
         link_text: "Kaggle Link",
         image: "kaggle.png",
-        tools: ["Jupyter", "Pandas", "Matplotlib", "Scikit-learn", "Python"]
+        tools: ["Jupyter", "Pandas", "Matplotlib", "Scikit-learn", "Python"],
+        tags: ["Data Analytics"]
     },
     {
         title: "Object-Relational MMORPG Database",
@@ -166,7 +171,8 @@ export let portfolio_items = [
         link: "https://github.com/greead/mmo_database_acs575/",
         link_text: "GitHub Link",
         image: "mmodatabase.png",
-        tools: ["PostgreSQL", "C#"]
+        tools: ["PostgreSQL", "SQL", "C#"],
+        tags: ["Databases"]
     },
     {
         title: "This Portfolio Website",
@@ -174,7 +180,8 @@ export let portfolio_items = [
         link: "https://github.com/greead/portfolio",
         link_text: "GitHub Link",
         image: "website.png",
-        tools: ["Svelte", "SvelteKit", "WebGL2", "GLSL", "JavaScript", "HTML", "CSS"]
+        tools: ["Svelte", "SvelteKit", "WebGL2", "GLSL", "JavaScript", "HTML", "CSS"],
+        tags: ["Frontend", "Graphics & Tech Art"]
     },
     {
         title: "ByteBuddy",
@@ -182,7 +189,8 @@ export let portfolio_items = [
         link: "https://github.com/greead/bytebuddy_chat",
         link_text: "GitHub Link",
         image: "bytebuddy.png",
-        tools: ["Svelte", "Django", "DjangoRestFramework", "Python", "JavaScript"]
+        tools: ["Svelte", "Django", "DjangoRestFramework", "Python", "JavaScript"],
+        tags: ["Frontend", "Backend"]
     },
     // {
     //     title: "Smart Medicine Cap and Notification Application",
@@ -197,7 +205,8 @@ export let portfolio_items = [
         link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2300/rec/65",
         link_text: "Poster Link",
         image: "undergrad_research_poster.png",
-        tools: ["Research"]
+        tools: ["Research"],
+        tags: ["Research"]
     },
     {
         title: "Research into the Impact of Different Displays on Human Emotions",
@@ -205,21 +214,8 @@ export let portfolio_items = [
         link: "https://mdon.library.pfw.edu/digital/collection/p16776coll9/id/2299/rec/63",
         link_text: "Poster Link",
         image: "vr_poster.png",
-        tools: ["Researh", "Unity 3D", "VR", "C#"]
+        tools: ["Research", "Unity 3D", "VR", "C#"],
+        tags: ["Research"]
     },
-    // {
-    //     title: "Steps Tracker Game",
-    //     body: "This app was developed to encourage walking and fitness by tracking steps and allowing users to spend their steps on upgrades for a clicker game, allowing users to gain 'clicks' by walking instead.",
-    //     link: "",
-    //     link_text: "",
-    //     image: "steps_app.jpg"
-    // },
-    // {
-    //     title: "LED Prototyping Box",
-    //     body: "This a prototyping box that used an embedded microprocessor to measure the accuracy of manufactured electrical motor sensors. It displays the info to an LED screen and was essential for starting the manufacturing process.",
-    //     link: "",
-    //     link_text: "",
-    //     image: "LED_box.png"
-    // },
 
 ]
