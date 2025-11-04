@@ -1,10 +1,10 @@
 <script>
-    let { text = "TEST", img = "/bytebuddy.png" } = $props();
+    let { text = "TEST", img = "/thesis.png" } = $props();
 </script>
 
 <div id="modal" class="modal">
-    <span class="close">×</span>
     <div class="modal-content">
+        <span class="close">×</span>
         <img id="img01" alt="modal" src={img} />
         <p>{text}</p>
     </div>
@@ -12,38 +12,41 @@
 
 <style>
     .modal {
-        display: flex;
+        /* display: flex;
         flex-flow: column nowrap;
-        align-items: center;
+        align-items: center; */
         position: fixed;
         top: 10vh;
         left: 10vw;
         z-index: 2;
         width: 80%;
-        min-height: 80%;
+        height: 80%;
         background-color: rgba(33, 33, 33, 0.95);
-        
+
         border-radius: 15px;
     }
 
     .modal-content {
         display: flex;
-        flex-flow: column wrap;
-        justify-content: space-evenly;
-        align-content: center;
+        flex-flow: column nowrap;
+        justify-items: flex-start;
+        align-items: center;
+        max-height: 100%;
         width: 100%;
+        height: 100%;
+        /* overflow: scroll; */
+    }
 
-        img {
-            max-height: 90%;
-            max-width: 90%;
-            border-radius: 15px;
-        }
+    img {
+        height: fit-content;
+        max-height: 85%;
+        max-width: 90%;
+        border-radius: 15px;
+    }
 
-        p {
-            text-align: center;
-            color: mintcream
-        }
-        
+    p {
+        text-align: center;
+        color: mintcream;
     }
 
     .close {

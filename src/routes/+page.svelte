@@ -9,7 +9,7 @@
     let sfx_toggle = $state(true);
 </script>
 
-<!-- <Modal /> -->
+<Modal />
 
 {#if sfx_toggle}
     <BgCanvas />
