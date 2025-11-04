@@ -1,15 +1,23 @@
 <script lang="ts">
+    import { modal_data } from "./modal_data.svelte";
     let { image, title, body, link, link_text, tools } = $props();
 </script>
 
 <div class="card">
-    <figure>
-        <img class="portfolio-img" src="/{image}" alt="Project" />
-        <figcaption>
-            <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
-            <span class="tooling-list">{tools.join(", ")}</span>
-        </figcaption>
-    </figure>
+    <button
+        onclick={() => {
+            modal_data.active = true;
+        }}
+    >
+        <figure>
+            <img class="portfolio-img" src="/{image}" alt="Project" />
+
+            <figcaption>
+                <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
+                <span class="tooling-list">{tools.join(", ")}</span>
+            </figcaption>
+        </figure>
+    </button>
     <h4 class="title"><b>{title}</b></h4>
     {body}
     <a href={link}>{link_text}</a>

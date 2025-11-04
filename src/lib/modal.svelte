@@ -1,20 +1,29 @@
 <script>
-    let { text = "TEST", img = "/thesis.png" } = $props();
+    import { modal_data } from "$lib/modal_data.svelte"
+
+    // let modal = $state();
+    // let modal_content = $state();
 </script>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">×</span>
-        <img id="img01" alt="modal" src={img} />
-        <p>{text}</p>
+<!-- <svelte:window onclick={(e) => {
+    if (true) {
+        modal_data.active = false;
+        console.log("CLICK");
+    }
+}}/> -->
+
+<div id="modal" class="modal" >
+    <div class="modal-content" >
+        <button type="button" class="close" onclick={() => {
+            modal_data.active = false;
+        }}>×</button>
+        <img id="img01" alt="modal" src={modal_data.img} />
+        <p>{modal_data.text}</p>
     </div>
 </div>
 
 <style>
     .modal {
-        /* display: flex;
-        flex-flow: column nowrap;
-        align-items: center; */
         position: fixed;
         top: 10vh;
         left: 10vw;
@@ -22,7 +31,6 @@
         width: 80%;
         height: 80%;
         background-color: rgba(33, 33, 33, 0.95);
-
         border-radius: 15px;
     }
 
@@ -50,11 +58,14 @@
     }
 
     .close {
+        background-color: transparent;
+        border: none;
+        margin: 0;
         color: mintcream;
         align-self: flex-end;
         font-size: 28px;
         font-weight: bold;
-        padding: 5px 10px;
+        padding: 5px 15px;
     }
 
     .close:hover,
