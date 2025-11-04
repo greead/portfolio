@@ -42,8 +42,6 @@
         margin: 0;
         width: 100%;
         align-items: center;
-        padding: 10px;
-        padding-bottom: 0;
     }
 
     .portfolio-img {
