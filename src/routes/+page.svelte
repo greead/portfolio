@@ -5,11 +5,15 @@
     import Navigation from "$lib/navigation.svelte";
     import Portfolio from "$lib/portfolio.svelte";
     import TopMatter from "$lib/top_matter.svelte";
+    import { modal_data } from "$lib/modal_data.svelte";
 
     let sfx_toggle = $state(true);
 </script>
 
-<!-- <Modal /> -->
+{#if modal_data.active}
+    <Modal />
+{/if}
+
 
 {#if sfx_toggle}
     <BgCanvas />

@@ -1,11 +1,14 @@
 <script>
-    let { text = "", img = "/whispers.png"} = $props();
+    import { modal_data, clickOutside } from "$lib/modal_data.svelte";
+    const hide_modal = () => (modal_data.active = false);
 </script>
 
 <div id="modal" class="modal">
-    <span class="close">×</span>
-    <img class="modal-content" id="img01" alt="modal" src={img}/>
-    <p>{text}</p>
+    <div class="modal-content" use:clickOutside onclick_outside={hide_modal}>
+        <button type="button" class="close" onclick={hide_modal}>×</button>
+        <img id="img01" alt="modal" src={modal_data.img} />
+        <p>{modal_data.text}</p>
+    </div>
 </div>
 
 <style>
@@ -14,30 +17,49 @@
         top: 10vh;
         left: 10vw;
         z-index: 2;
-        width: 80vw;
-        height: 80vh;
-        opacity: 0.95;
-        background-color: #333;
+        width: 80%;
+        height: 80%;
+        background-color: rgba(33, 33, 33, 0.95);
+        border-radius: 15px;
     }
 
     .modal-content {
-        margin: 15% auto;
-        display: block;
-        width: 80%;
-        max-width: 700px;
-        opacity: 100;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-items: flex-start;
+        align-items: center;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+        /* overflow: scroll; */
+    }
+
+    img {
+        height: fit-content;
+        max-height: 85%;
+        max-width: 90%;
+        border-radius: 15px;
+    }
+
+    p {
+        text-align: center;
+        color: mintcream;
     }
 
     .close {
-        color: #aaa;
-        float: right;
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        color: mintcream;
+        align-self: flex-end;
         font-size: 28px;
         font-weight: bold;
+        padding: 5px 15px;
     }
 
     .close:hover,
     .close:focus {
-        color: black;
+        color: var(--color_font_secondary);
         text-decoration: none;
         cursor: pointer;
     }

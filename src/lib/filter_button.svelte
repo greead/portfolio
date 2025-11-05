@@ -14,7 +14,7 @@
         width: fit-content;
         height: fit-content;
         padding: 0vh 1vw;
-        border-radius: 5%;
+        border-radius: 15px;
         margin-bottom: 1vh;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         border: 3px solid var(--color_font_secondary);
@@ -39,6 +39,7 @@
         background-color: var(--color_bg);
         color: var(--color_font_primary);
         z-index: -1;
+        border-radius: 10px;
     }
 
     input:checked ~ .filter-toggle {
