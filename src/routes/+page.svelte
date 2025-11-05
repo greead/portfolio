@@ -13,8 +13,6 @@
 {#if modal_data.active}
     <Modal />
 {/if}
-
-
 {#if sfx_toggle}
     <BgCanvas />
 {/if}

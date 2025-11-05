@@ -1,22 +1,11 @@
-<script lang="ts">
-    import Timeline from "./timeline.svelte";
-    const birthdate = new Date("9/12/1999");
-    const today = new Date();
-    const years = today.getFullYear() - birthdate.getFullYear();
-    const months = today.getMonth() - birthdate.getMonth();
-    const days = today.getDate() - birthdate.getDate();
-    const yearsOld =
-        months < 0 || (months === 0 && days < 0) ? years - 1 : years;
-</script>
-
-<span style="position: relative; top: -4rem;" id="about"></span>
+<span id="about"></span>
 <main>
     <h1>About Me</h1>
     <div class="content">
         <div class="text">
             <h2>Professionally</h2>
             <p>
-                Hello, I'm Alekzander Green. I'm a {yearsOld} year old aspiring software
+                Hello, I'm Alekzander Green. I'm a  year old aspiring software
                 engineer with a passion for programming. I recently graduated from
                 Purdue University with an M.S. in Computer Science. I previously
                 graduated from Purdue with a B.S. in Computer Engineering Technology,
@@ -76,6 +65,11 @@
 </main>
 
 <style>
+    #about {
+        position: relative;
+        top: -4rem;
+    }
+
     main {
         width: 76vw;
     }
@@ -87,8 +81,6 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         width: calc(100% - 2px);
         padding: 1vh 0;
-        /* top: 10vh;
-        position: sticky; */
     }
 
     p {

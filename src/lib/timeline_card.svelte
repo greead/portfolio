@@ -37,7 +37,7 @@
         box-sizing: border-box;
         perspective: 800px;
     }
-
+/* 
     .timeline ul li .content h3 {
         font-size: 17px;
         padding-top: 5px;
@@ -48,7 +48,7 @@
         font-size: 15px;
         text-align: justify;
         line-height: 150%;
-    }
+    } */
 
     span {
         display: block;
@@ -58,12 +58,12 @@
         text-decoration: underline;
     }
 
-    @media (max-width: 300px) {
+    /* @media (max-width: 300px) {
         .timeline ul li .content h3 {
             color: rgb(189, 253, 221);
             font-size: 15px;
         }
-    }
+    } */
 
     img {
         grid-area: 1 / 4 / 1 / 4;
@@ -73,10 +73,10 @@
         margin: 0px 0px 0px 8px;
     }
 
-    .keywords {
+    /* .keywords {
         margin-top: 8px;
         grid-area: 3 / 1 / 3 / 4;
-    }
+    } */
 
     p {
         grid-area: 1 / 1 / 2 / 4;

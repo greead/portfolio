@@ -1,7 +1,7 @@
 <script lang="ts">
     import FilterButton from "./filter_button.svelte";
     import PortfolioCard from "./portfolio_card.svelte";
-    import { portfolio_items } from "./store";
+    import { portfolio_items } from "$lib/site_data.svelte";
 
     let selectedRadio = $state("All");
 </script>

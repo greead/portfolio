@@ -1,15 +1,17 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { main_shader } from "./store";
+    import { wave_shader } from "$lib/shaders.svelte";
     import { browser } from "$app/environment";
 
-    const vsSource = main_shader.vert;
-    const fsSource = main_shader.frag;
+    // TODO massive cleanup necessary
+    const vsSource = wave_shader.vert;
+    const fsSource = wave_shader.frag;
     let canvas: HTMLCanvasElement;
     let gl: WebGL2RenderingContext | null;
     let uTimeLoc: WebGLUniformLocation | null;
     let uResolutionLoc: WebGLUniformLocation | null;
 
+    // Change to an $effect when implementing multiple shaders
     onMount(() => {
         gl = canvas.getContext("webgl2");
         // gl = null;
