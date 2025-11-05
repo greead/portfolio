@@ -1,22 +1,11 @@
 <script>
-    import { modal_data } from "$lib/modal_data.svelte"
-
-    // let modal = $state();
-    // let modal_content = $state();
+    import { modal_data, clickOutside } from "$lib/modal_data.svelte";
+    const hide_modal = () => (modal_data.active = false);
 </script>
 
-<!-- <svelte:window onclick={(e) => {
-    if (true) {
-        modal_data.active = false;
-        console.log("CLICK");
-    }
-}}/> -->
-
-<div id="modal" class="modal" >
-    <div class="modal-content" >
-        <button type="button" class="close" onclick={() => {
-            modal_data.active = false;
-        }}>×</button>
+<div id="modal" class="modal">
+    <div class="modal-content" use:clickOutside onclick_outside={hide_modal}>
+        <button type="button" class="close" onclick={hide_modal}>×</button>
         <img id="img01" alt="modal" src={modal_data.img} />
         <p>{modal_data.text}</p>
     </div>

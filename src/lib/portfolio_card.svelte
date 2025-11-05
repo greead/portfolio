@@ -1,17 +1,17 @@
 <script lang="ts">
     import { modal_data } from "./modal_data.svelte";
     let { image, title, body, link, link_text, tools } = $props();
+    const show_modal = () => {
+        modal_data.active = true;
+        modal_data.img = image;
+        modal_data.text = title;
+    };
 </script>
 
 <div class="card">
-    <button
-        onclick={() => {
-            modal_data.active = true;
-        }}
-    >
+    <button onclick={show_modal}>
         <figure>
             <img class="portfolio-img" src="/{image}" alt="Project" />
-
             <figcaption>
                 <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
                 <span class="tooling-list">{tools.join(", ")}</span>
@@ -41,6 +41,11 @@
         .card {
             width: 100%;
         }
+    }
+
+    button {
+        all: unset;
+        cursor: zoom-in;
     }
 
     figure {
