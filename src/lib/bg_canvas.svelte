@@ -3,7 +3,11 @@
     import { wave_shader } from "$lib/shaders.svelte";
     import { browser } from "$app/environment";
 
-    // TODO massive cleanup necessary
+    // TODO: MASSIVE CLEANUP NEEDED
+    // TODO: Consider extracting into a svelte.js file
+    // TODO: Consider switching to an attachment on a canvas? (research necessary)
+    // TODO: Add support for multiple shader effects once cleaned up
+    // TODO: Fix shader code to be better in light mode (fix transparency?)
     const vsSource = wave_shader.vert;
     const fsSource = wave_shader.frag;
     let canvas: HTMLCanvasElement;

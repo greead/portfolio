@@ -1,8 +1,10 @@
 <script>
-    import { onMount } from "svelte";
-
-    // import ContactButton from "./contact_button.svelte";
-    let { active = 0 } = $props();
+    // TODO: Extract nav elements into a new component
+    // TODO: Extract link elements into a new component
+    // TODO: Consider simplifying and unifying presentation
+    // TODO: Consider adding a "nav" tag?
+    // TODO: Highlight the current page section based on scrolling
+    // TODO: Add tooltips for social links
     let width = $state(0);
     let showtext = $derived(width > 800)
 </script>

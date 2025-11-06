@@ -1,5 +1,7 @@
 <script>
     let { image = "/whispers.png", orient = "horizontal", offset = 6 } = $props();
+
+    // TODO: Consider simplifying massively
     let isHorz = orient == "horizontal";
     let top_offset = isHorz ? "0px" : `-${offset}vw`;
     let left_offset = isHorz ? `-${offset}vw` : "0px";

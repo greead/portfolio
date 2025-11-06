@@ -1,6 +1,10 @@
 <script>
     import { modal_data, clickOutside } from "$lib/modal_data.svelte";
     const hide_modal = () => (modal_data.active = false);
+
+    // TODO: Consider simplifying structure
+    // TODO: Adjust modal to adjust size based on content
+    // TODO: Consider swapping to padding approach or setting width/height or max-width/height
 </script>
 
 <div id="modal" class="modal">

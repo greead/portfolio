@@ -1,3 +1,4 @@
+// TODO: Add a "matrix" shader with falling 1s and 0s
 export let wave_shader = $state({
     vert:
    `#version 300 es

@@ -6,6 +6,8 @@
         modal_data.img = image;
         modal_data.text = title;
     };
+    // TODO: Swap to using rounded, colored tags instead of a list of items in the figcaption
+    // TODO: Swap to using gifs, videos, or webps for portfolio items as necessary
 </script>
 
 <div class="card">

@@ -4,6 +4,8 @@
     import { portfolio_items } from "$lib/site_data.svelte";
     
     let selectedRadio = $state("All");
+
+    // TODO: Extract the tags list into the site_data store
 </script>
 
 <span class="reftag" id="portfolio"></span>

@@ -1,3 +1,9 @@
+<script>
+    // TODO: Add experience
+    // TODO: Add resume
+    // TODO: Add a summary of skills and tools
+    // TODO: Add personal and professional portraits
+</script>
 <span class="reftag" id="about"></span>
 <section>
     <h1 class="section-header">About Me</h1>

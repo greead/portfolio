@@ -1,5 +1,7 @@
 <script lang="ts">
     let { btn, selectedRadio = $bindable() } = $props();
+    // TODO: Add tooltip
+    // TODO: Look into border radii
 </script>
 
 <label for={btn} class="filter-btn">

@@ -4,6 +4,10 @@
     import { browser } from "$app/environment";
     import Switch from "./switch.svelte";
     let { sfx = $bindable() } = $props();
+    
+    // TODO: Add an effect selector to switch between different bg SFX
+    // TODO: Swap between a list of flairs underneath the name
+    // TODO: Implement a typewriter effect on the flairs as they switch out
 
     let dark_mode = $state(true);
     let show_sfx_toggle = $state(true);

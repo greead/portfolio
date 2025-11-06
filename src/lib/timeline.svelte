@@ -1,6 +1,9 @@
 <script lang="ts">
     import TimelineCard from "./timeline_card.svelte";
     import { experience_items } from "$lib/site_data.svelte";
+
+    // TODO: Simplify and reimplement timeline
+
 </script>
 
 <div class="timeline">

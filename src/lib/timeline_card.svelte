@@ -1,21 +1,11 @@
 <script lang="ts">
-    import { base } from "$app/paths";
-    import Tag from "./tag.svelte";
-
-    interface Props {
-        date?: string;
-        title?: string;
-        body?: string;
-        img?: string;
-    }
-
     let {
         date = "2020",
         title = "Title",
         body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
         img = "pfw.png",
-    }: Props = $props();
-    //   export let keywords = ["JavaScript", "HTML", "CSS"]
+    } = $props();
+    // TODO: Clean up
 </script>
 
 <div class="content">
@@ -23,11 +13,8 @@
 </div>
 <span>{date}</span>
 <div class="content bottom">
-    <img src="{base}/{img}" alt="Logo" />
+    <img src="/{img}" alt="Logo" />
     <p>{body}</p>
-    <!-- <div class="keywords">
-    <Tag {keywords}/>
-  </div>  -->
 </div>
 
 <style>
@@ -37,7 +24,7 @@
         box-sizing: border-box;
         perspective: 800px;
     }
-/* 
+    /* 
     .timeline ul li .content h3 {
         font-size: 17px;
         padding-top: 5px;

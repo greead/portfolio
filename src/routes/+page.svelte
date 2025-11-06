@@ -18,7 +18,8 @@
 {/if}
 <main>
     <TopMatter bind:sfx={sfx_toggle} />
-    <Navigation active={0} />
+    <!-- <Navigation active={0} /> -->
+    <Navigation />
     <Portfolio />
     <About />
 </main>
