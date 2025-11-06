@@ -1,6 +1,6 @@
 <span class="reftag" id="about"></span>
 <section>
-    <h1>About Me</h1>
+    <h1 class="section-header">About Me</h1>
     <div class="content">
         <h2>Professionally</h2>
         <p>

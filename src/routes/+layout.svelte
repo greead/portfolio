@@ -43,7 +43,7 @@
         width: 76vw;
     }
 
-    :global(h1) {
+    :global(h1.section-header) {
         font-family: "NovaCut-Regular";
         text-align: center;
         background-color: var(--color_bg);
