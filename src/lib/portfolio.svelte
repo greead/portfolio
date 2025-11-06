@@ -1,20 +1,20 @@
-<script lang="ts">
+<script>
     import FilterButton from "./filter_button.svelte";
     import PortfolioCard from "./portfolio_card.svelte";
     import { portfolio_items } from "$lib/site_data.svelte";
-
+    
     let selectedRadio = $state("All");
 </script>
 
-<span style="position: relative; top: -4rem;" id="portfolio"></span>
+<span class="reftag" id="portfolio"></span>
 <section>
     <h1>Portfolio</h1>
-    <div class="portfolio-filter">
+    <div class="portfolio-filters">
         {#each ["All", "Data Analytics", "Graphics & Tech Art", "Game Dev", "Research", "Full-stack", "Backend", "Frontend", "Databases", "Testing"].sort() as btn}
             <FilterButton {btn} bind:selectedRadio />
         {/each}
     </div>
-    <div class="portfolio-card">
+    <div class="portfolio-cards">
         {#each portfolio_items as portfolio_item}
             {#if selectedRadio == "All" || portfolio_item.tags.includes(selectedRadio)}
                 <PortfolioCard {...portfolio_item} />
@@ -24,31 +24,16 @@
 </section>
 
 <style>
-    section {
-        width: 76vw;
-    }
-
-    h1 {
-        text-align: center;
-        background-color: var(--color_bg);
-        border: 1px solid green;
-        opacity: 0.95;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        width: calc(100% - 2px);
-        padding: 1vh 0;
-    }
-
-    .portfolio-filter {
+    .portfolio-filters {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
     }
 
-    .portfolio-card {
+    .portfolio-cards {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
         text-align: center;
     }
-
 </style>

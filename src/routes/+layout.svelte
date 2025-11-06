@@ -4,7 +4,6 @@
     }
 
     let { children }: Props = $props();
-
 </script>
 
 <a href="/"><img src="/logo.svg" alt="Logo" /></a>
@@ -40,8 +39,19 @@
         background-repeat: repeat-y;
     }
 
+    :global(section) {
+        width: 76vw;
+    }
+
     :global(h1) {
         font-family: "NovaCut-Regular";
+        text-align: center;
+        background-color: var(--color_bg);
+        border: 1px solid green;
+        opacity: 0.95;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        width: calc(100% - 2px);
+        padding: 1vh 0;
     }
 
     :global(a:link) {
@@ -52,11 +62,10 @@
         color: var(--color_font_visited);
     }
 
-    /* :global(div) {
-        background-color: rgba(152, 251, 152, 0.9);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        border: 1px solid green;
-    } */
+    :global(.reftag) {
+        position: relative;
+        top: -4rem;
+    }
 
     @font-face {
         font-family: "NovaCut-Regular";
