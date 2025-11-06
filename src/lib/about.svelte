@@ -6,8 +6,8 @@
 </script>
 <span class="reftag" id="about"></span>
 <section>
-    <h1 class="section-header">About Me</h1>
-    <div class="content">
+    <h1 class="section-header rounded">About Me</h1>
+    <div class="content rounded">
         <h2>Professionally</h2>
         <ul>
             <li>

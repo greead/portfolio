@@ -1,9 +1,5 @@
-<script lang="ts">
-    interface Props {
-        children?: import("svelte").Snippet;
-    }
-
-    let { children }: Props = $props();
+<script>
+    let { children } = $props();
 </script>
 
 <a href="/"><img src="/logo.svg" alt="Logo" /></a>
@@ -13,19 +9,22 @@
 <style>
     :global {
         html {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 150%;
-            scroll-behavior: smooth;
+            /* Color Variables (Dark) */
             --color_primary: mintcream;
             --color_secondary: #333;
             --color_bg: #333;
             --color_font_primary: mintcream;
             --color_font_secondary: rgba(152, 251, 152, 1);
             --color_font_visited: rgb(255, 200, 154);
+
             color: var(--color_font_primary);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 150%;
+            scroll-behavior: smooth;
         }
 
         html.light {
+            /* Color Variables (Light) */
             --color_primary: rgba(152, 251, 152);
             --color_secondary: #333;
             --color_bg: mintcream;
@@ -62,10 +61,14 @@
         a:visited {
             color: var(--color_font_visited);
         }
-        
+
         .reftag {
             position: relative;
             top: -4rem;
+        }
+
+        .rounded {
+            border-radius: 4px;
         }
     }
 

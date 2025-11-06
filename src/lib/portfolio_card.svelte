@@ -10,7 +10,7 @@
     // TODO: Swap to using gifs, videos, or webps for portfolio items as necessary
 </script>
 
-<div class="card">
+<div class="card rounded">
     <button onclick={show_modal}>
         <figure>
             <img class="portfolio-img" src="/{image}" alt="Project" />

@@ -10,7 +10,7 @@
 </script>
 <svelte:window bind:innerWidth={width} />
 
-<ul id="nav">
+<ul class="rounded" id="nav">
     <li>
         <a href="#top" class="text-icon">
             <img class="small" src="/home_icon.svg" alt="Icon" />

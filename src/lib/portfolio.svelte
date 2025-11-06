@@ -10,7 +10,7 @@
 
 <span class="reftag" id="portfolio"></span>
 <section>
-    <h1 class="section-header">Portfolio</h1>
+    <h1 class="section-header rounded">Portfolio</h1>
     <div class="portfolio-filters">
         {#each ["All", "Data Analytics", "Graphics & Tech Art", "Game Dev", "Research", "Full-stack", "Backend", "Frontend", "Databases", "Testing"].sort() as btn}
             <FilterButton {btn} bind:selectedRadio />
