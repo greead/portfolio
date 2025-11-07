@@ -1,32 +1,40 @@
 <script>
     import { onMount } from "svelte";
     import PageLink from "./page_link.svelte";
-    import { text } from "@sveltejs/kit";
     import SocialLink from "./social_link.svelte";
 
-    // TODO: Extract nav elements into a new component
-    // TODO: Extract link elements into a new component
     // TODO: Consider simplifying and unifying presentation
-    // TODO: Consider adding a "nav" tag?
     // TODO: Highlight the current page section based on scrolling
     // TODO: Add tooltips for social links
 
+    // let navlist = $state();
     // onMount(() => {
     //     const links = navlist.querySelectorAll('a[href^="#');
-    //     console.log('links', links);
+    //     const pageElements = document.querySelectorAll('span[id]')
+    //     console.log('links', pageElements);
     // })
 </script>
 
+<!-- <nav class="rounded" id="nav" bind:this={navlist}> -->
 <nav class="rounded" id="nav">
-    <div class="page-links">
+    <div class="row page-links">
         <PageLink href="#top" src="/home_icon.svg" text="Home" />
         <PageLink href="#portfolio" src="portfolio_icon.svg" text="Portfolio" />
         <PageLink href="#about" src="/about_icon.svg" text="About" />
     </div>
-    <div class="social-links">
-        <SocialLink href="https://www.linkedin.com/in/greead/" src="/InBug-White.png"/>
-        <SocialLink href="https://github.com/greead" src="/github-mark-white.svg" />
-        <SocialLink href="mailto:alekz.green08@gmail.com" src="/mail-white.png" />
+    <div class="row social-links">
+        <SocialLink
+            href="https://www.linkedin.com/in/greead/"
+            src="/InBug-White.png"
+        />
+        <SocialLink
+            href="https://github.com/greead"
+            src="/github-mark-white.svg"
+        />
+        <SocialLink
+            href="mailto:alekz.green08@gmail.com"
+            src="/mail-white.png"
+        />
     </div>
 </nav>
 
@@ -52,18 +60,17 @@
         background-color: var(--color_secondary);
     }
 
-    .page-links {
+    .row {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: flex-start;
-    }
-    
-    .social-links {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: flex-end;
     }
 
+    .page-links {
+        justify-content: flex-start;
+    }
+
+    .social-links {
+        justify-content: flex-end;
+    }
 </style>

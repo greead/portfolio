@@ -1,8 +1,14 @@
 <script>
-    let { href, src, text, alt="icon" } = $props();
+    let { href, src, text, active=false, alt="icon" } = $props();
+
+    // let scrollY = $state(0);
+    // let innerHeight = $state(0);
+    // let innerCenter = $derived(innerHeight / 2);
 </script>
 
-<a {href}>
+<!-- <svelte:window bind:scrollY bind:innerHeight/> -->
+
+<a {href} class={{active}}>
     <img class="small" {src} {alt} />
     <span class="mobile-hide">{text}</span>
 </a>
@@ -11,18 +17,17 @@
     a {
         color: mintcream;
         text-decoration: none;
-        text-align: center;
         font-size: 1em;
         padding: 0 10px;
     }
 
     .small {
         height: 1em;
-        /* padding-right: 4px; */
     }
 
-    a.active {
-        color: var(--color_secondary);
+    .active {
+        color: rgb(152, 251, 152);
+        border-bottom: 2px solid rgb(152, 251, 152);
     }
 
     @media (max-width: 800px) {
