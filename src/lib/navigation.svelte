@@ -1,47 +1,62 @@
 <script>
+    import { onMount } from "svelte";
+
     // TODO: Extract nav elements into a new component
     // TODO: Extract link elements into a new component
     // TODO: Consider simplifying and unifying presentation
     // TODO: Consider adding a "nav" tag?
     // TODO: Highlight the current page section based on scrolling
     // TODO: Add tooltips for social links
-    let width = $state(0);
-    let showtext = $derived(width > 800)
-</script>
-<svelte:window bind:innerWidth={width} />
 
-<ul class="rounded" id="nav">
-    <li>
-        <a href="#top" class="text-icon">
-            <img class="small" src="/home_icon.svg" alt="Icon" />
-            {#if showtext}Home{/if}            
-        </a>
-    </li>
-    <li>
-        <a href="#portfolio" class="text-icon">
-            <img class="small" src="/portfolio_icon.svg" alt="Icon" />
-            {#if showtext}Portfolio{/if}
-        </a>
-    </li>
-    <li>
-        <a href="#about" class="text-icon">
-            <img class="small" src="/about_icon.svg" alt="Icon" style="" />
-            {#if showtext}About{/if}
-        </a>
-    </li>
-    <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
+    // onMount(() => {
+    //     const links = navlist.querySelectorAll('a[href^="#');
+    //     console.log('links', links);
+    // })
+</script>
+
+<nav class="rounded" id="nav">
+    <a href="#top" class="text-icon">
+        <img class="small" src="/home_icon.svg" alt="Icon" />
+        <span class="hide-mobile">Home</span>
+    </a>
+    <a href="#portfolio" class="text-icon">
+        <img class="small" src="/portfolio_icon.svg" alt="Icon" />
+        <span class="hide-mobile">Portfolio</span>
+    </a>
+    <a href="#about" class="text-icon">
+        <img class="small" src="/about_icon.svg" alt="Icon" style="" />
+        <span class="hide-mobile">About</span>
+    </a>
+    <a
+        style:margin-left="auto"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/greead/"
+    >
         <img class="padded-icon" src="/InBug-White.png" alt="LinkedIn Link" />
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/greead">
-        <img class="padded-icon" src="/github-mark-white.svg" alt="GitHub Link" />
+    <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/greead"
+    >
+        <img
+            class="padded-icon"
+            src="/github-mark-white.svg"
+            alt="GitHub Link"
+        />
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="mailto:alekz.green08@gmail.com">
+    <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="mailto:alekz.green08@gmail.com"
+    >
         <img class="padded-icon" src="/mail-white.png" alt="Email Link" />
     </a>
-</ul>
+</nav>
 
 <style>
-    ul {
+    nav {
         /* Alignment */
         display: flex;
         flex-flow: row nowrap;
@@ -64,19 +79,15 @@
         background-color: var(--color_secondary);
     }
 
-    li {
-        padding: 1vh 1vw;
-        text-align: center;
-        font-size: 1em;
-        text-decoration: none;
-    }
-
     a {
-        color: var(--color_primary);
+        color: mintcream;
         text-decoration: none;
     }
 
     .text-icon {
+        padding: 1vh 1vw;
+        text-align: center;
+        font-size: 1em;
         display: inline;
     }
 
@@ -91,8 +102,13 @@
         height: 1.5em;
     }
 
-    /* a.active {
+    a.active {
         color: var(--color_secondary);
-        text-decoration: none;
-    } */
+    }
+
+    @media (max-width: 800px) {
+        .hide-mobile {
+            display: none;
+        }
+    }
 </style>
