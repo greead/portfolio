@@ -1,5 +1,8 @@
 <script>
     import { onMount } from "svelte";
+    import PageLink from "./page_link.svelte";
+    import { text } from "@sveltejs/kit";
+    import SocialLink from "./social_link.svelte";
 
     // TODO: Extract nav elements into a new component
     // TODO: Extract link elements into a new component
@@ -15,100 +18,52 @@
 </script>
 
 <nav class="rounded" id="nav">
-    <a href="#top" class="text-icon">
-        <img class="small" src="/home_icon.svg" alt="Icon" />
-        <span class="hide-mobile">Home</span>
-    </a>
-    <a href="#portfolio" class="text-icon">
-        <img class="small" src="/portfolio_icon.svg" alt="Icon" />
-        <span class="hide-mobile">Portfolio</span>
-    </a>
-    <a href="#about" class="text-icon">
-        <img class="small" src="/about_icon.svg" alt="Icon" style="" />
-        <span class="hide-mobile">About</span>
-    </a>
-    <a
-        style:margin-left="auto"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/greead/"
-    >
-        <img class="padded-icon" src="/InBug-White.png" alt="LinkedIn Link" />
-    </a>
-    <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/greead"
-    >
-        <img
-            class="padded-icon"
-            src="/github-mark-white.svg"
-            alt="GitHub Link"
-        />
-    </a>
-    <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="mailto:alekz.green08@gmail.com"
-    >
-        <img class="padded-icon" src="/mail-white.png" alt="Email Link" />
-    </a>
+    <div class="page-links">
+        <PageLink href="#top" src="/home_icon.svg" text="Home" />
+        <PageLink href="#portfolio" src="portfolio_icon.svg" text="Portfolio" />
+        <PageLink href="#about" src="/about_icon.svg" text="About" />
+    </div>
+    <div class="social-links">
+        <SocialLink href="https://www.linkedin.com/in/greead/" src="/InBug-White.png"/>
+        <SocialLink href="https://github.com/greead" src="/github-mark-white.svg" />
+        <SocialLink href="mailto:alekz.green08@gmail.com" src="/mail-white.png" />
+    </div>
 </nav>
 
 <style>
     nav {
-        /* Alignment */
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
+        /* Grid */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        /* Sticky position */
         top: 1vh;
         position: sticky;
-        min-width: 76vw;
         z-index: 1;
-        opacity: 0.95;
 
-        /* Style */
+        /* Size */
+        min-width: 74vw;
+        padding: 1vh 1vw;
+
+        /* Styling */
+        opacity: 0.95;
         border: 1px solid green;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-
-        /* Remove default list attributes */
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
         background-color: var(--color_secondary);
     }
 
-    a {
-        color: mintcream;
-        text-decoration: none;
+    .page-links {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
     }
 
-    .text-icon {
-        padding: 1vh 1vw;
-        text-align: center;
-        font-size: 1em;
-        display: inline;
-    }
-
-    .small {
-        height: 1em;
-        padding-right: 5px;
-    }
-
-    .padded-icon {
-        display: block;
-        padding-right: 10px;
-        height: 1.5em;
-    }
-
-    a.active {
-        color: var(--color_secondary);
-    }
-
-    @media (max-width: 800px) {
-        .hide-mobile {
-            display: none;
-        }
-    }
 </style>
