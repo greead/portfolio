@@ -1,22 +1,11 @@
 <script>
-    let { href, src, alt = "Link", tooltip = href, is_pdf = false } = $props();
-    const onclick = () => {
-        window.open(href, "_blank", "fullscreen=yes");
-        return false;
-    };
+    let { href, src, alt = "Link", tooltip = href} = $props();
 </script>
 
-{#if is_pdf}
-    <a {href} download>
-        <img class="padded-icon" {src} alt="Link" />
-        <span class="tooltip">{tooltip}</span>
-    </a>
-{:else}
-    <a target="_blank" rel="noopener noreferrer" {href}>
-        <img class="padded-icon" {src} alt="Link" />
-        <span class="tooltip">{tooltip}</span>
-    </a>
-{/if}
+<a target="_blank" rel="noopener noreferrer" {href}>
+    <img class="padded-icon" {src} alt="Link" />
+    <span class="tooltip">{tooltip}</span>
+</a>
 
 <style>
     a {
