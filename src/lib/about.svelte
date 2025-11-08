@@ -1,4 +1,6 @@
 <script>
+    import PdfView from "./pdf_view.svelte";
+
     // TODO: Add experience
     // TODO: Add resume
     // TODO: Add a summary of skills and tools
@@ -7,6 +9,7 @@
 <span class="reftag" id="about"></span>
 <section>
     <h1 class="section-header rounded">About Me</h1>
+    <PdfView title="Resume" data="/resume.pdf"/>
     <div class="content rounded">
         <h2>Professionally</h2>
         <ul>
@@ -79,6 +82,7 @@
             </li>
         </ul>
     </div>
+    
 </section>
 
 <style>
