@@ -58,14 +58,14 @@
             bind:switch_state={sfx}
             onclick={toggleSFX}
             image="/sfx_blk.svg"
-            alt="SVG toggle"
+            alt="SFX"
         />
     {/if}
     <Switch
         bind:switch_state={dark_mode}
         onclick={toggleTheme}
         image="/dark_mode.svg"
-        alt="Dark Mode toggle"
+        alt="Dark Mode"
     />
 </div>
 <header class="top-matter">

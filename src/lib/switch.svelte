@@ -6,6 +6,7 @@
     <input type="checkbox" bind:checked={switch_state} {onclick} />
     <span class="toggle"></span>
     <img src={image} {alt} />
+    <span class="tooltip">{alt}</span>
 </label>
 
 <style>
@@ -48,5 +49,25 @@
         width: 100%;
         height: auto;
         z-index: 1;
+    }
+
+    .tooltip {
+        visibility: hidden; /* Hidden by default */
+        white-space: nowrap;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 5px 5px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1; /* Ensure tooltip is displayed above content */
+        right: 45%;
+        top: 120%;
+    }
+
+    @media (min-width: 800px) {
+        label:hover .tooltip {
+            visibility: visible;
+        }
     }
 </style>
