@@ -16,6 +16,7 @@
         <SocialLink href="https://www.linkedin.com/in/greead/" src="/InBug-White.png" tooltip="linkedin.com/in/greead" />
         <SocialLink href="https://github.com/greead" src="/github-mark-white.svg" tooltip="github.com/greead" />
         <SocialLink href="mailto:alekz.green08@gmail.com" src="/mail-white.png" tooltip="alekz.green08@gmail.com" />
+        <SocialLink href="/resume.pdf" src="/resume.svg" tooltip="View resume"/>
     </div>
 </nav>
 
