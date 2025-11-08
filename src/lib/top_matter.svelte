@@ -51,6 +51,7 @@
     });
 </script>
 
+<span id="home"></span>
 <div class="switches">
     {#if show_sfx_toggle}
         <Switch
