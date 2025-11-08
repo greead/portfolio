@@ -4,7 +4,7 @@
     import { browser } from "$app/environment";
     import Switch from "./switch.svelte";
     let { sfx = $bindable() } = $props();
-    
+
     // TODO: Add an effect selector to switch between different bg SFX
     // TODO: Swap between a list of flairs underneath the name
     // TODO: Implement a typewriter effect on the flairs as they switch out
@@ -70,10 +70,12 @@
 </div>
 <header class="top-matter">
     <Portrait image={"me.jpg"} orient={"vertical"} offset={0} />
-    <h1>
-        Alekzander <span style="color: var(--color_font_secondary)">Green</span>
-    </h1>
-    <h2>Aspiring Techno-Wizard</h2>
+    <div class="slight-bg">
+        <h1>
+            Alekzander <span class="green">Green</span>
+        </h1>
+        <h2>Aspiring Techno-Wizard</h2>
+    </div>
 </header>
 
 <style>
@@ -94,18 +96,29 @@
 
     h1 {
         font-family: "NovaCut-Regular";
-        font-size: 5vw;
+        font-size: clamp(2rem, 5vw, 4rem);
         font-weight: bolder;
         text-align: center;
-        text-wrap: nowrap;
-        margin-bottom: 10px;
+        margin-top: 0;
     }
 
     h2 {
         font-family: "NovaCut-Regular";
-        font-size: 3vw;
+        font-size: clamp(1.5rem, 3vw, 2rem);
         text-align: center;
-        text-wrap: nowrap;
         margin-bottom: 40px;
+    }
+
+    .green {
+        color: var(--color_font_secondary);
+    }
+
+    .slight-bg {
+        background-color: color-mix(in srgb, var(--color_bg), transparent 20%);
+        box-shadow: 0 0 20px 20px color-mix(in srgb, var(--color_bg), transparent 20%);
+        border-radius: 10px;
+        width: calc(76vw - 40px);
+        margin-top: 25px;
+        height: min-content;
     }
 </style>

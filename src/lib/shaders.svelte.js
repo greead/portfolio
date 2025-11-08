@@ -1,7 +1,7 @@
 // TODO: Add a "matrix" shader with falling 1s and 0s
 export let wave_shader = $state({
     vert:
-   `#version 300 es
+        `#version 300 es
     in vec2 aPosition;
     
     void main(void) {
@@ -9,7 +9,7 @@ export let wave_shader = $state({
     }
     `,
     frag:
-   `#version 300 es
+        `#version 300 es
     precision highp float;
 
     uniform float uTime;
@@ -21,7 +21,8 @@ export let wave_shader = $state({
 
     vec4 Line(vec2 uv, float speed, float height, vec3 col) {
         uv.y += S(1.0, 0.0, abs(uv.x * 0.8)) * sin(uTime * speed - uv.x * height) * 0.3 - 0.15;
-        return vec4(S(0.005 * S(0.1, 1.0, abs(uv.x)), 0.0, abs(uv.y) - 0.005) * col, 0.0);
+        float val = S(0.005 * S(0.1, 1.0, abs(uv.x)), 0.0, abs(uv.y) - 0.005);
+        return vec4(val * col, val*0.6);
     }
 
     void main() {
@@ -30,11 +31,14 @@ export let wave_shader = $state({
         vec4 linestore = vec4(0.0);
         for (float i = 0.0; i <= 5.0; i += 1.0) {
             float t = i / 20.0;
-            vec4 line = Line(uv, 1.0 + t, 8.0, vec3(0.03 + t * 0.5, 0.11 + t * 0.5, 0.03 + t * 0.5));
-            linestore += line;
+            vec4 line = Line(uv, 1.0 + t, 8.0, vec3(0.12 + t, 0.44 + t, 0.12 + t));
+            if (linestore.a == 0.0) {
+                linestore += line;
+            }
+            
         }
 
-        fragColor = vec4(linestore.rgb, linestore.g);
+        fragColor = linestore;
     }
     `
 });
