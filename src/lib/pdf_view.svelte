@@ -3,11 +3,10 @@
 </script>
 
 <details>
-    <summary>Resume</summary>
+    <summary>{title}</summary>
     <object {title} {data} type="application/pdf">
         <p>
-            PDF in-page preview unavailable. Use another browser or download
-            <a {href}>here</a>
+            PDF in-page preview unavailable. Use another browser or download by clicking<a {href} download>here</a>.
         </p>
     </object>
 </details>
