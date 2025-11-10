@@ -1,8 +1,10 @@
 <script>
+    import { asset, resolve } from '$app/paths';
+
     let { children } = $props();
 </script>
 
-<a href="/"><img src="/logo.svg" alt="Logo" /></a>
+<a href={resolve("/")}><img src={asset("/logo.svg")} alt="Logo" /></a>
 
 {@render children?.()}
 

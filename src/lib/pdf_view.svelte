@@ -8,7 +8,7 @@
     <summary>{title}</summary>
     <object {title} data={asset(data)} type="application/pdf">
         <p>
-            PDF in-page preview unavailable. Use another browser or download by clicking <a {href} download>here</a>.
+            PDF in-page preview unavailable. Use another browser or download by clicking <a href={asset(href)} download>here</a>.
         </p>
     </object>
 </details>
