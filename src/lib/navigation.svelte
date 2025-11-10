@@ -9,7 +9,7 @@
 <nav class="rounded" id="nav">
     <div class="row page-links">
         <PageLink href="#top" src="/home_icon.svg" text="Home"/>
-        <PageLink href="#portfolio" src="portfolio_icon.svg" text="Portfolio" />
+        <PageLink href="#portfolio" src="/portfolio_icon.svg" text="Portfolio" />
         <PageLink href="#about" src="/about_icon.svg" text="About" />
     </div>
     <div class="row social-links">

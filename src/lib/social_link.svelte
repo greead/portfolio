@@ -1,9 +1,11 @@
 <script>
+    import { asset } from "$app/paths";
+
     let { href, src, alt = "Link", tooltip = href} = $props();
 </script>
 
 <a target="_blank" rel="noopener noreferrer" {href}>
-    <img class="padded-icon" {src} alt="Link" />
+    <img class="padded-icon" src={asset(src)} alt="Link" />
     <span class="tooltip">{tooltip}</span>
 </a>
 

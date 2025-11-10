@@ -1,10 +1,12 @@
 <script>
+    import { asset } from "$app/paths";
+
     let { title, data, href = data } = $props();
 </script>
 
 <details>
     <summary>{title}</summary>
-    <object {title} {data} type="application/pdf">
+    <object {title} data={asset(data)} type="application/pdf">
         <p>
             PDF in-page preview unavailable. Use another browser or download by clicking <a {href} download>here</a>.
         </p>

@@ -1,4 +1,6 @@
 <script>
+    import { asset } from "$app/paths";
+
     let { image = "/whispers.png", orient = "horizontal", offset = 6 } = $props();
 
     // TODO: Consider simplifying massively
@@ -11,7 +13,7 @@
 
 <div class="circular">
     <img
-        src={image}
+        src={asset(image)}
         style:margin-top={top_offset}
         style:margin-left={left_offset}
         style:width

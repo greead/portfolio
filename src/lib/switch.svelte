@@ -1,11 +1,13 @@
 <script>
+    import { asset } from "$app/paths";
+
     let { switch_state = $bindable(), onclick, image, alt="toggle" } = $props();
 </script>
 
 <label class="switch">
     <input type="checkbox" bind:checked={switch_state} {onclick} />
     <span class="toggle"></span>
-    <img src={image} {alt} />
+    <img src={asset(image)} {alt} />
     <span class="tooltip">{alt}</span>
 </label>
 

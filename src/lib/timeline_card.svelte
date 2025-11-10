@@ -1,9 +1,11 @@
 <script lang="ts">
+    import { asset } from "$app/paths";
+
     let {
         date = "2020",
         title = "Title",
         body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-        img = "pfw.png",
+        img = "/pfw.png",
     } = $props();
     // TODO: Clean up
 </script>
@@ -13,7 +15,7 @@
 </div>
 <span>{date}</span>
 <div class="content bottom">
-    <img src="/{img}" alt="Logo" />
+    <img src={asset(img)} alt="Logo" />
     <p>{body}</p>
 </div>
 

@@ -1,4 +1,6 @@
 <script>
+    import { asset } from "$app/paths";
+
     let { href, src, text, active=false, alt="icon" } = $props();
 
     // let scrollY = $state(0);
@@ -9,7 +11,7 @@
 <!-- <svelte:window bind:scrollY bind:innerHeight/> -->
 
 <a {href} class={{active}}>
-    <img class="small" {src} {alt} />
+    <img class="small" src={asset(src)} {alt} />
     <span class="mobile-hide">{text}</span>
 </a>
 

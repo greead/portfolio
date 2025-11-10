@@ -69,7 +69,7 @@
     />
 </div>
 <header class="top-matter">
-    <Portrait image={"me.jpg"} orient={"vertical"} offset={0} />
+    <Portrait image={"/me.jpg"} orient={"vertical"} offset={0} />
     <div class="slight-bg">
         <h1>
             Alekzander <span class="green">Green</span>
