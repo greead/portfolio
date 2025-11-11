@@ -1,62 +1,78 @@
-<script lang="ts">
-    interface Props {
-        children?: import("svelte").Snippet;
-    }
+<script>
+    import { asset, resolve } from '$app/paths';
 
-    let { children }: Props = $props();
-
+    let { children } = $props();
 </script>
 
-<a href="/"><img src="/logo.svg" alt="Logo" /></a>
+<a href={resolve("/")}><img src={asset("/logo.svg")} alt="Logo" /></a>
 
 {@render children?.()}
 
 <style>
-    :global(html) {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 150%;
-        scroll-behavior: smooth;
-        --color_primary: mintcream;
-        --color_secondary: #333;
-        --color_bg: #333;
-        --color_font_primary: mintcream;
-        --color_font_secondary: rgba(152, 251, 152, 1);
-        --color_font_visited: rgb(255, 200, 154);
-        color: var(--color_font_primary);
-    }
+    :global {
+        html {
+            /* Color Variables (Dark) */
+            --color_primary: mintcream;
+            --color_secondary: #333;
+            --color_bg: #333;
+            --color_font_primary: mintcream;
+            --color_font_secondary: rgba(152, 251, 152, 1);
+            --color_font_visited: rgb(255, 200, 154);
 
-    :global(html.light) {
-        --color_primary: rgba(152, 251, 152);
-        --color_secondary: #333;
-        --color_bg: mintcream;
-        --color_font_primary: #333;
-        --color_font_secondary: green;
-        --color_font_visited: rgb(160, 72, 0);
-    }
+            color: var(--color_font_primary);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 150%;
+            scroll-behavior: smooth;
+        }
 
-    :global(body) {
-        background-color: var(--color_bg);
-        background-image: url("/wavey.png");
-        background-repeat: repeat-y;
-    }
+        html.light {
+            /* Color Variables (Light) */
+            --color_primary: rgba(152, 251, 152);
+            --color_secondary: #333;
+            --color_bg: mintcream;
+            --color_font_primary: #333;
+            --color_font_secondary: green;
+            --color_font_visited: rgb(160, 72, 0);
+        }
 
-    :global(h1) {
-        font-family: "NovaCut-Regular";
-    }
+        body {
+            background-color: var(--color_bg);
+            background-image: url("/wavey.png");
+            background-repeat: repeat-y;
+        }
 
-    :global(a:link) {
-        color: var(--color_font_secondary);
-    }
+        section {
+            width: 76vw;
+        }
 
-    :global(a:visited) {
-        color: var(--color_font_visited);
-    }
+        h1.section-header {
+            font-family: "NovaCut-Regular";
+            text-align: center;
+            background-color: var(--color_bg);
+            border: 1px solid green;
+            opacity: 0.95;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            width: calc(100% - 2px);
+            padding: 1vh 0;
+        }
 
-    /* :global(div) {
-        background-color: rgba(152, 251, 152, 0.9);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        border: 1px solid green;
-    } */
+        a:link {
+            color: var(--color_font_secondary);
+        }
+
+        a:visited {
+            color: var(--color_font_visited);
+        }
+
+        .reftag {
+            position: relative;
+            top: -4rem;
+        }
+
+        .rounded {
+            border-radius: 4px;
+        }
+    }
 
     @font-face {
         font-family: "NovaCut-Regular";

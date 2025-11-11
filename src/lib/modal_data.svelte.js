@@ -5,6 +5,7 @@ export const modal_data = $state({
 });
 
 // @ts-ignore
+// TODO: Switch to an attachment instead of an action
 export function clickOutside(node) {
     // @ts-ignore
     const handleClick = event => {

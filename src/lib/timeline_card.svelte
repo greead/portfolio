@@ -1,21 +1,13 @@
 <script lang="ts">
-    import { base } from "$app/paths";
-    import Tag from "./tag.svelte";
-
-    interface Props {
-        date?: string;
-        title?: string;
-        body?: string;
-        img?: string;
-    }
+    import { asset } from "$app/paths";
 
     let {
         date = "2020",
         title = "Title",
         body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-        img = "pfw.png",
-    }: Props = $props();
-    //   export let keywords = ["JavaScript", "HTML", "CSS"]
+        img = "/pfw.png",
+    } = $props();
+    // TODO: Clean up
 </script>
 
 <div class="content">
@@ -23,11 +15,8 @@
 </div>
 <span>{date}</span>
 <div class="content bottom">
-    <img src="{base}/{img}" alt="Logo" />
+    <img src={asset(img)} alt="Logo" />
     <p>{body}</p>
-    <!-- <div class="keywords">
-    <Tag {keywords}/>
-  </div>  -->
 </div>
 
 <style>
@@ -37,7 +26,7 @@
         box-sizing: border-box;
         perspective: 800px;
     }
-
+    /* 
     .timeline ul li .content h3 {
         font-size: 17px;
         padding-top: 5px;
@@ -48,7 +37,7 @@
         font-size: 15px;
         text-align: justify;
         line-height: 150%;
-    }
+    } */
 
     span {
         display: block;
@@ -58,12 +47,12 @@
         text-decoration: underline;
     }
 
-    @media (max-width: 300px) {
+    /* @media (max-width: 300px) {
         .timeline ul li .content h3 {
             color: rgb(189, 253, 221);
             font-size: 15px;
         }
-    }
+    } */
 
     img {
         grid-area: 1 / 4 / 1 / 4;
@@ -73,10 +62,10 @@
         margin: 0px 0px 0px 8px;
     }
 
-    .keywords {
+    /* .keywords {
         margin-top: 8px;
         grid-area: 3 / 1 / 3 / 4;
-    }
+    } */
 
     p {
         grid-area: 1 / 1 / 2 / 4;

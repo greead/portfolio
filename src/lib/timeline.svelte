@@ -1,20 +1,16 @@
 <script lang="ts">
     import TimelineCard from "./timeline_card.svelte";
-    import { experience_items } from "./store";
+    import { experience_items } from "$lib/site_data.svelte";
+
+    // TODO: Simplify and reimplement timeline
+
 </script>
 
 <div class="timeline">
     <h1>Experience</h1>
     <ul>
         {#each experience_items as experience}
-            <li>
-                <TimelineCard
-                    date={experience.date}
-                    title={experience.title}
-                    body={experience.body}
-                    img={experience.image}
-                />
-            </li>
+            <li><TimelineCard {...experience} /></li>
         {/each}
     </ul>
 </div>

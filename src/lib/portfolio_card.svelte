@@ -1,19 +1,22 @@
 <script lang="ts">
-    import { modal_data } from "./modal_data.svelte";
+    import { asset } from "$app/paths";
+import { modal_data } from "./modal_data.svelte";
     let { image, title, body, link, link_text, tools } = $props();
     const show_modal = () => {
         modal_data.active = true;
         modal_data.img = image;
         modal_data.text = title;
     };
+    // TODO: Swap to using rounded, colored tags instead of a list of items in the figcaption
+    // TODO: Swap to using gifs, videos, or webps for portfolio items as necessary
 </script>
 
-<div class="card">
+<div class="card rounded">
     <button onclick={show_modal}>
         <figure>
-            <img class="portfolio-img" src="/{image}" alt="Project" />
+            <img class="portfolio-img" src={asset(image)} alt="Project" />
             <figcaption>
-                <img class="tooling-icon" src="/tooling_icon.svg" alt="icon" />
+                <img class="tooling-icon" src={asset("/tooling_icon.svg")} alt="icon" />
                 <span class="tooling-list">{tools.join(", ")}</span>
             </figcaption>
         </figure>

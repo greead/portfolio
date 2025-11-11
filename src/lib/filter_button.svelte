@@ -1,5 +1,6 @@
 <script lang="ts">
     let { btn, selectedRadio = $bindable() } = $props();
+    // TODO: Add tooltip
 </script>
 
 <label for={btn} class="filter-btn">

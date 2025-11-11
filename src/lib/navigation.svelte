@@ -1,96 +1,59 @@
 <script>
-    import { onMount } from "svelte";
+    import { asset, resolve } from "$app/paths";
+    import PageLink from "./page_link.svelte";
+    import SocialLink from "./social_link.svelte";
 
-    // import ContactButton from "./contact_button.svelte";
-    let { active = 0 } = $props();
-    let width = $state(0);
-    let showtext = $derived(width > 800)
+    // TODO: Highlight the current page section based on scrolling
+    // TODO: Add tooltips for social links
+
 </script>
-<svelte:window bind:innerWidth={width} />
-
-<ul id="nav">
-    <li>
-        <a href="#top" class="text-icon">
-            <img class="small" src="/home_icon.svg" alt="Icon" />
-            {#if showtext}Home{/if}            
-        </a>
-    </li>
-    <li>
-        <a href="#portfolio" class="text-icon">
-            <img class="small" src="/portfolio_icon.svg" alt="Icon" />
-            {#if showtext}Portfolio{/if}
-        </a>
-    </li>
-    <li>
-        <a href="#about" class="text-icon">
-            <img class="small" src="/about_icon.svg" alt="Icon" style="" />
-            {#if showtext}About{/if}
-        </a>
-    </li>
-    <a style:margin-left="auto" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/greead/">
-        <img class="padded-icon" src="/InBug-White.png" alt="LinkedIn Link" />
-    </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/greead">
-        <img class="padded-icon" src="/github-mark-white.svg" alt="GitHub Link" />
-    </a>
-    <a target="_blank" rel="noopener noreferrer" href="mailto:alekz.green08@gmail.com">
-        <img class="padded-icon" src="/mail-white.png" alt="Email Link" />
-    </a>
-</ul>
+<nav class="rounded" id="nav">
+    <div class="row page-links">
+        <PageLink href="#top" src="/home_icon.svg" text="Home"/>
+        <PageLink href="#portfolio" src="/portfolio_icon.svg" text="Portfolio" />
+        <PageLink href="#about" src="/about_icon.svg" text="About" />
+    </div>
+    <div class="row social-links">
+        <SocialLink href="https://www.linkedin.com/in/greead/" src="/InBug-White.png" tooltip="linkedin.com/in/greead" />
+        <SocialLink href="https://github.com/greead" src="/github-mark-white.svg" tooltip="github.com/greead" />
+        <SocialLink href="mailto:alekz.green08@gmail.com" src="/mail-white.png" tooltip="alekz.green08@gmail.com" />
+        <SocialLink href={asset("/resume.pdf")} src="/resume.svg" tooltip="View resume"/>
+    </div>
+</nav>
 
 <style>
-    ul {
-        /* Alignment */
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
+    nav {
+        /* Grid */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        /* Sticky position */
         top: 1vh;
         position: sticky;
-        min-width: 76vw;
         z-index: 1;
-        opacity: 0.95;
 
-        /* Style */
+        /* Size */
+        min-width: 74vw;
+        padding: 1vh 1vw;
+
+        /* Styling */
+        opacity: 0.95;
         border: 1px solid green;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-
-        /* Remove default list attributes */
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
         background-color: var(--color_secondary);
     }
 
-    li {
-        padding: 1vh 1vw;
-        text-align: center;
-        font-size: 1em;
-        text-decoration: none;
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
     }
 
-    a {
-        color: var(--color_primary);
-        text-decoration: none;
+    .page-links {
+        justify-content: flex-start;
     }
 
-    .text-icon {
-        display: inline;
+    .social-links {
+        justify-content: flex-end;
     }
-
-    .small {
-        height: 1em;
-        padding-right: 5px;
-    }
-
-    .padded-icon {
-        display: block;
-        padding-right: 10px;
-        height: 1.5em;
-    }
-
-    /* a.active {
-        color: var(--color_secondary);
-        text-decoration: none;
-    } */
 </style>

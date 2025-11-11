@@ -1,12 +1,17 @@
 <script>
-    import { modal_data, clickOutside } from "$lib/modal_data.svelte";
+    import { asset } from "$app/paths";
+import { modal_data, clickOutside } from "$lib/modal_data.svelte";
     const hide_modal = () => (modal_data.active = false);
+
+    // TODO: Consider simplifying structure
+    // TODO: Adjust modal to adjust size based on content
+    // TODO: Consider swapping to padding approach or setting width/height or max-width/height
 </script>
 
 <div id="modal" class="modal">
     <div class="modal-content" use:clickOutside onclick_outside={hide_modal}>
         <button type="button" class="close" onclick={hide_modal}>×</button>
-        <img id="img01" alt="modal" src={modal_data.img} />
+        <img id="img01" alt="modal" src={asset(modal_data.img)} />
         <p>{modal_data.text}</p>
     </div>
 </div>

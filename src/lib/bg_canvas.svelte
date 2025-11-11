@@ -1,15 +1,20 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { main_shader } from "./store";
+    import { wave_shader } from "$lib/shaders.svelte";
     import { browser } from "$app/environment";
 
-    const vsSource = main_shader.vert;
-    const fsSource = main_shader.frag;
+    // TODO: MASSIVE CLEANUP NEEDED
+    // TODO: Consider extracting into a svelte.js file
+    // TODO: Consider switching to an attachment on a canvas? (research necessary)
+    // TODO: Add support for multiple shader effects once cleaned up
+    const vsSource = wave_shader.vert;
+    const fsSource = wave_shader.frag;
     let canvas: HTMLCanvasElement;
     let gl: WebGL2RenderingContext | null;
     let uTimeLoc: WebGLUniformLocation | null;
     let uResolutionLoc: WebGLUniformLocation | null;
 
+    // Change to an $effect when implementing multiple shaders
     onMount(() => {
         gl = canvas.getContext("webgl2");
         // gl = null;
