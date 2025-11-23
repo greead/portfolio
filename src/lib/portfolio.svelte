@@ -2,19 +2,32 @@
     import FilterButton from "./filter_button.svelte";
     import PortfolioCard from "./portfolio_card.svelte";
     import { portfolio_items } from "$lib/site_data.svelte";
-    
-    const tags = new Map([
-        ["all", "All"],
-        ["data", "Data Analysis & ML"],
-        ["graphics", "Graphics & Tech Art"],
-        ["games", "Game Dev"],
-        ["research", "Research"],
-        ["fullstack", "Full-stack"],
-        ["backend", "Backend"],
-        ["frontend", "Frontend"],
-        ["db", "Databases"],
-        ["testing", "Testing"],
-    ]);
+
+    // const tags = new Map([
+    //     ["all", "All"],
+    //     ["data", "Data Analysis & ML"],
+    //     ["graphics", "Graphics & Tech Art"],
+    //     ["games", "Game Dev"],
+    //     ["research", "Research"],
+    //     ["fullstack", "Full-stack"],
+    //     ["backend", "Backend"],
+    //     ["frontend", "Frontend"],
+    //     ["db", "Databases"],
+    //     ["testing", "Testing"],
+    // ]);
+
+    let tags = [
+        "All",
+        "Data Analysis & ML",
+        "Graphics & Tech Art",
+        "Game Dev",
+        "Research",
+        "Full-stack",
+        "Backend",
+        "Frontend",
+        "Databases",
+        "Testing",
+    ].sort();
 
     let selectedRadio = $state("All");
 
@@ -25,7 +38,7 @@
 <section>
     <h1 class="section-header rounded">Portfolio</h1>
     <div class="portfolio-filters">
-        {#each tags.values() as btn}
+        {#each tags as btn}
             <FilterButton {btn} bind:selectedRadio />
         {/each}
     </div>
