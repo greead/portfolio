@@ -7,6 +7,7 @@
     // TODO: Add tooltips for social links
 
 </script>
+
 <nav class="rounded" id="nav">
     <div class="row page-links">
         <PageLink href="#top" src="/home_icon.svg" text="Home"/>

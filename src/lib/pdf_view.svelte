@@ -29,5 +29,6 @@
 
     details {
         padding-bottom: 1vh;
+        cursor: pointer;
     }
 </style>
