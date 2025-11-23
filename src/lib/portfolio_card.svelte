@@ -23,7 +23,7 @@ import { modal_data } from "./modal_data.svelte";
     </button>
     <h4 class="title"><b>{title}</b></h4>
     {body}
-    <a href={link}>{link_text}</a>
+    <a href={link} target="_blank" rel="noopener noreferrer">{link_text}</a>
 </div>
 
 <style>

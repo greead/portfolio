@@ -3,16 +3,29 @@
     import PortfolioCard from "./portfolio_card.svelte";
     import { portfolio_items } from "$lib/site_data.svelte";
     
+    const tags = new Map([
+        ["all", "All"],
+        ["data", "Data Analysis & ML"],
+        ["graphics", "Graphics & Tech Art"],
+        ["games", "Game Dev"],
+        ["research", "Research"],
+        ["fullstack", "Full-stack"],
+        ["backend", "Backend"],
+        ["frontend", "Frontend"],
+        ["db", "Databases"],
+        ["testing", "Testing"],
+    ]);
+
     let selectedRadio = $state("All");
 
-    // TODO: Extract the tags list into the site_data store
+    // TODO: Extract the tags list into/from the site_data store
 </script>
 
 <span class="reftag" id="portfolio"></span>
 <section>
     <h1 class="section-header rounded">Portfolio</h1>
     <div class="portfolio-filters">
-        {#each ["All", "Data Analytics", "Graphics & Tech Art", "Game Dev", "Research", "Full-stack", "Backend", "Frontend", "Databases", "Testing"].sort() as btn}
+        {#each tags.values() as btn}
             <FilterButton {btn} bind:selectedRadio />
         {/each}
     </div>
